@@ -16,6 +16,19 @@ angular
                 });
             }
 
+            var getPlaylistByUser = function(user) {
+                    debugger
+
+                $http.get(ServerUrl + '/users/' + user.id).success(function(response){
+                    debugger
+
+                    angular.copy(response, playlist);
+                    _storePlaylist(response)
+                }).error(function(data,status,headers,config){
+                    console.log('Youre doing it wrong ' + data, status, headers, config);
+                });
+            }
+
             var updatePlaylist = function(user, movie) {
                 var data = {user: user, movie: movie};
                 $http.put(ServerUrl + '/playlists/' + user.playlist_id, data).success(function(response){
@@ -41,6 +54,7 @@ angular
                 playlist: playlist,
                 getPlaylist: getPlaylist,
                 updatePlaylist: updatePlaylist,
-                isInPlaylist: isInPlaylist
+                isInPlaylist: isInPlaylist,
+                getPlaylistByUser: getPlaylistByUser
             };
     }]);
