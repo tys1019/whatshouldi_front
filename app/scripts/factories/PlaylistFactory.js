@@ -2,9 +2,10 @@
 
 angular
     .module('whatshouldiApp')
-    .factory('PlaylistFactory', ['$http', '$window', 'ServerUrl', function($http, $window, ServerUrl){
+    .factory('PlaylistFactory', ['$http', '$window', 'ServerUrl', '$routeParams', 'MovieFactory',function($http, $window, ServerUrl, $routeParams, MovieFactory){
             var playlists = [];
             var playlist = JSON.parse($window.localStorage.getItem('ga-playlist')) || {};
+            var movie = MovieFactory.movie;
 
             var getPlaylist = function(playlistId) {
                 $http.get(ServerUrl + '/playlists/' + playlistId).success(function(response){
@@ -24,6 +25,11 @@ angular
                 });
             }
 
+            var isInPlaylist = function(movie) {
+                return playlist.movies.some(function(e){return e.guidebox_id === movie.guidebox_id});
+            }
+
+
             var _storePlaylist = function(data){
                 $window.localStorage.setItem('ga-playlist', JSON.stringify(data));
             };
@@ -34,6 +40,7 @@ angular
                 playlists: playlists,
                 playlist: playlist,
                 getPlaylist: getPlaylist,
-                updatePlaylist: updatePlaylist
+                updatePlaylist: updatePlaylist,
+                isInPlaylist: isInPlaylist
             };
     }]);

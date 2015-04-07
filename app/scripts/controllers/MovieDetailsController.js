@@ -2,12 +2,16 @@
 
 angular.module('MainController').controller('MovieDetailsController', movieDetailsController);
 
-movieDetailsController.$inject = ['MovieFactory', '$location', '$routeParams', '$window', 'PlaylistFactory'];
+movieDetailsController.$inject = ['MovieFactory', '$location', '$routeParams', '$window', 'PlaylistFactory', 'AuthFactory'];
 
-function movieDetailsController(MovieFactory, $location, $routeParams, $window, PlaylistFactory) {
+function movieDetailsController(MovieFactory, $location, $routeParams, $window, PlaylistFactory, AuthFactory) {
     var vm = this;
 
     vm.movie = MovieFactory.movie;
+
+    vm.isAuthenticated = function(){
+        return AuthFactory.isAuthenticated()
+    };
 
 
     vm.updatePlaylist = function(){
@@ -16,12 +20,15 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
     };
 
 
-    // vm.isInPlaylist = function(){
-    //     var playlist = PlaylistFactory.playlist;
-    //     var movie = this.movie;
-    //     debugger
-    //     return playlist.movies.some(function(m){return m.guidebox_id === movie.guidebox_id});
-    // };
+    vm.isInPlaylist = function(){
+
+        if (AuthFactory.isAuthenticated() && PlaylistFactory.isInPlaylist(vm.movie)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
 
     vm.getRatings = function(){
 
