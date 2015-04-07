@@ -38,6 +38,6 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
 
     }
 
-    MovieFactory.getMovieDetails($routeParams.guideboxId);
+    MovieFactory.getMovieDetails($routeParams.guideboxId).then(function(){debugger});
 
 }

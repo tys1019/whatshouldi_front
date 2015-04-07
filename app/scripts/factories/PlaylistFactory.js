@@ -26,7 +26,7 @@ angular
             }
 
             var isInPlaylist = function(movie) {
-                return playlist.movies.some(function(e){return e.guidebox_id === movie.guidebox_id});
+                return playlist.movies ? playlist.movies.some(function(e){return e.guidebox_id === movie.guidebox_id}) : false;
             }
 
 
