@@ -1,0 +1,11 @@
+<h1>{{movieDetailsController.movie.title}}</h1>
+
+<div ng-hide="movieDetailsController.isInPlaylist()">
+<button class="button btn-success" ng-click="movieDetailsController.updatePlaylist()">Add to Playlist</button>
+</div>
+<div ng-show="movieDetailsController.isInPlaylist()">
+<button class="button btn-danger" ng-click="movieDetailsController.updatePlaylist()">Remove from Playlist</button>
+</div>
+<h3>{{movieDetailsController.movie.overview}}</h3>
+<img ng-src="{{movieDetailsController.movie.poster_path}}" alt="">
+<iframe ng-if"{{movieDetailsController.movie.trailer}}" width='640' height='360' ng-src="{{movieDetailsController.movie.trailer | trustUrl}}" frameborder='0' scrolling='no'></iframe>

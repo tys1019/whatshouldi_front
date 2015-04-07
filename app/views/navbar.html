@@ -1,0 +1,42 @@
+    <div class="header" ng-controller="NavbarController as navbarController">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <a class="navbar-brand" href="#/">whatshouldiApp</a>
+          </div>
+
+
+            <ul class="nav navbar-nav" >
+              <li ng-if="navbarController.isLoggedIn()"><a href="javascript:void(0)" ng-click="navbarController.logout()">Logout</a></li>
+
+              <li ng-show="navbarController.isLoggedIn()"><a href="#/playlists/{{navbarController.user.playlist_id}}" >My Queue</a></li>
+
+              <li ng-if="!navbarController.isLoggedIn()"> <a href="javascript:void(0)" ng-controller="ModalController as modalController" ng-click="modalController.openLogin()" > Login</a></li>
+
+
+
+                <li ng-if="!navbarController.isLoggedIn()"> <a href="javascript:void(0)" ng-controller="ModalController as modalController" ng-click="modalController.openSignUp()">Sign Up</a></li>
+
+            </ul>
+
+
+          <form class="form-inline" name="searchForm" ng-submit="navbarController.search(navbarController.search_params)">
+            <div class="form-group">
+                <input id="search-query" type="text" name="search-query" ng-model="navbarController.search_params.search_query" class="form-control" required>
+
+                <select class="form-control" ng-model="navbarController.search_params.media_type" required>
+                  <option selected>Movie</option>
+                  <option>TV</option>
+                </select>
+
+                <input type="submit" class="button-submit" ng-disabled="searchForm.$invalid" value="Search">
+              </div>
+          </form>
+
+
+
+
+        </div>
+      </div>
+    </div>

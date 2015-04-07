@@ -1,0 +1,133 @@
+@mixin defaults {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@mixin box-shadow($x: 0, $y: 0, $blur: 0, $spread: 0, $color: #000) {
+  -moz-box-shadow: $x $y $blur $spread $color;
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin border-box($args) {
+  box-sizing: $args;
+}
+
+@mixin align-right {
+  float: right;
+}
+
+@mixin transition($prop, $duration: 0.2s, $timing: ease, $delay: 0) {
+  -webkit-transition: $prop $duration $timing $delay;
+  -moz-transition: $prop $duration $timing $delay;
+  -o-transition: $prop $duration $timing $delay;
+  transition: $prop $duration $timing $delay;
+  transition-property: $prop;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+  transition-delay: $delay;
+}
+
+@mixin transform($args) {
+  -webkit-transform: $args;
+   -moz-transform: $args;
+   -o-transform: $args;
+   -ms-transform: $args;
+   transform: $args;
+}
+
+@mixin afterIcon($url,$bgW,$bgH){
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  content: '';
+  width: $bgW;
+  height: $bgH;
+  background: url($url) no-repeat center center;
+}
+
+@mixin animation($name,$propStart,$valStart,$propEnd,$valEnd){
+  @-webkit-keyframes $name {
+    0%   { $propStart: $valStart; }
+    100% { $propEnd: $valEnd; }
+  }
+  @-moz-keyframes $name {
+    0%   { $propStart: $valStart; }
+    100% { $propEnd: $valEnd; }
+  }
+  @-o-keyframes $name {
+    0%   { $propStart: $valStart; }
+    100% { $propEnd: $valEnd; }
+  }
+  @keyframes $name {
+    0%   { $propStart: $valStart; }
+    100% { $propEnd: $valEnd; }
+  }
+}
+
+@mixin implementAnim($name,$timing,$repeat){
+  -webkit-animation: $name $timing $repeat; /* Safari 4+ */
+  -moz-animation:    $name $timing $repeat; /* Fx 5+ */
+  -o-animation:      $name $timing $repeat; /* Opera 12+ */
+  animation:         $name $timing $repeat; /* IE 10+, Fx 29+ */
+}
+
+@mixin notification {
+  position:absolute;
+  top: 70px;
+  right: 10px;
+  width: auto;
+  height: auto;
+  background-color: $white;
+  padding: 6px 20px;
+  @include box-shadow(0,0,10px,0,#000);
+}
+
+@mixin button($bgcolor, $font-color, $border-radius) {
+  background-color: $bgcolor;
+  color: $font-color;
+  border-radius: $border-radius;
+  padding: 10px;
+  margin: 5px auto;
+  text-decoration: none;
+  width: auto;
+  display: inline-block;
+}
+
+@mixin inline-list {
+  display: inline-block;
+  list-style: none;
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($grow, $shrink, $basic) {
+  -webkit-box-flex: $grow $shrink $basic;
+  -moz-box-flex:  $grow $shrink $basic;
+  -webkit-flex:  $grow $shrink $basic;
+  -ms-flex:  $grow $shrink $basic;
+  flex:  $grow $shrink $basic;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin media-query($val) {
+  @media (max-width: $val) {
+    @content;
+  }
+}

@@ -1,0 +1,14 @@
+<input type="button" class="button-submit" ng-click="searchController.toggleDisplayResults()" value="Toggle Display">
+
+
+<div ng-show="searchController.displayResults">
+
+    <h1> Search results </h1>
+    <h2>{{searchController.displayResults}}</h2>
+
+        <a ng-href="#/movie/{{result.id}}" ng-repeat="result in searchController.results" id="{{result.id}}">
+            <img ng-src="{{result.poster_240x342}}" alt="">
+
+        </a>
+
+</div>

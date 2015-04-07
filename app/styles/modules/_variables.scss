@@ -1,0 +1,60 @@
+/*—————————————————————————————————————————
+*****************Z-Index********************
+——————————————————————————————————————————*/
+$z-featured-image: -1;
+$z-body: 0;
+$z-post-images: 1;
+$z-contact-form-input: 2;
+$z-post-gallery-nav: 3;
+$z-nav: 998;
+$z-alerts: 3;
+$z-nav-icon: 999;
+$z-ajax-preloader: 1000;
+/*—————————————————————————————————————————
+*****************Colors********************
+——————————————————————————————————————————*/
+// gray scale
+$black: #000000;
+$black-90: #414042;
+$black-80: #58595b;
+$black-70: #6d6e71;
+$black-60: #808184;
+$black-50: #929497;
+$black-40: #a6a8ab;
+$black-30: #bbbdbf;
+$black-20: #d0d2d3;
+$black-10: #e5e6e7;
+$white: #ffffff;
+
+$darkblue: #193549;
+$lightblue: #0088ff;
+$yellow: #3ad900;
+$lightyellow: #9eff80;
+$orange: #ff9d00;
+$lightgreen: #80ffbb;
+$pink: #ff628c;
+$codewhite: #e1efff;
+
+
+/*——————————————————————————————————————————
+***************TYPOGRAPHY*****************
+——————————————————————————————————————————*/
+
+$header-font: "proxima-nova-soft", Helvetica, Arial, sans-serif;
+$body-font: "freight-sans-pro", Georgia, Times, serif;
+$mono-spaced-font: "ubuntu-mono",monospace;
+
+$header-light: 300;
+$header-heavy: 800;
+
+$body-light: 300;
+$body-bold: 700;
+
+$base-font-size: 14px;
+$large-font-size: 1.2em;
+$xlarge-font-size: 1.5em;
+$xxlarge-font-size: 2em;
+$xxxlarge-font-size: 3.3em;
+
+$base-line-height: 20px;
+$large-line-height: 24px;

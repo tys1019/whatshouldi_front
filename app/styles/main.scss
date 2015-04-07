@@ -1,0 +1,20 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import 'modules/mixins';
+@import 'modules/variables';
+
+@import 'utilities/grid';
+@import 'utilities/responsive';
+
+@import 'partials/yeomandefaults';
+@import 'partials/navbar';
+@import 'partials/mainpage';
+
+
+
+
+
+

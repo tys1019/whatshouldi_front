@@ -1,0 +1,33 @@
+<h2>Register </h2>
+
+
+<form class="sign-up-form" name="signUpForm" ng-submit="signUpController.signUp(signUpController.credentials)" novalidate>
+    <div class="form-group">
+        <input id="firstname" type="text" name="firstname" ng-model="signUpController.credentials.user.first_name" required>
+        <label id="firstname-label" for="firstname">First Name</label>
+    </div>
+
+    <div class="form-group">
+        <input id="lastname" type="text" name="lastname" ng-model="signUpController.credentials.user.last_name" required>
+        <label id="lastname-label" for="lastname">Last Name</label>
+    </div>
+
+    <div class="form-group">
+        <input id="email" type="text" name="email" ng-model="signUpController.credentials.user.email" required>
+        <label id="email-label" for="email">Email Address</label>
+    </div>
+
+    <div class="form-group">
+        <input id="username" type="text" name="username" ng-model="signUpController.credentials.user.username" required>
+        <label id="username-label" for="username">Username</label>
+    </div>
+
+    <div class="form-group">
+        <input id="password" type="password" name="password" ng-model="signUpController.credentials.user.password" required>
+        <label id="password-label" for="password">password</label>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="button-submit" ng-disabled="signUpForm.$invalid" value="Register">
+    </div>
+</form>

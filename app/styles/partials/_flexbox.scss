@@ -1,0 +1,24 @@
+@import "../modules/mixins";
+
+body {
+  width: 100%;
+}
+section#container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+
+  div.submission {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+  }
+}
