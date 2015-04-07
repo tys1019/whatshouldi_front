@@ -16,12 +16,12 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
     };
 
 
-    vm.isInPlaylist = function(){
-        var playlist = PlaylistFactory.playlist;
-        var movie = this.movie;
-        debugger
-        return playlist.movies.some(function(m){return m.guidebox_id === movie.guidebox_id});
-    };
+    // vm.isInPlaylist = function(){
+    //     var playlist = PlaylistFactory.playlist;
+    //     var movie = this.movie;
+    //     debugger
+    //     return playlist.movies.some(function(m){return m.guidebox_id === movie.guidebox_id});
+    // };
 
     vm.getRatings = function(){
 
@@ -31,6 +31,6 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
 
     }
 
-    MovieFactory.getMovieDetails($routeParams.guideboxId).then(function(){debugger});
+    MovieFactory.getMovieDetails($routeParams.guideboxId);
 
 }

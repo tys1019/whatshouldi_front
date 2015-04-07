@@ -12,7 +12,6 @@ angular
   .module('whatshouldiApp', [
     'ngAnimate',
     'ngCookies',
-    'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',

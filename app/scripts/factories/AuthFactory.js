@@ -9,7 +9,6 @@ angular
                 return $http.post(ServerUrl + '/login', credentials).success(function(response){
                     _storeSession(response);
                     angular.copy(response, user);
-                    PlaylistFactory.getPlaylist(response.playlist_id);
                 });
             };
 
@@ -18,7 +17,6 @@ angular
                         $window.localStorage.removeItem('ga-user');
                         $window.localStorage.removeItem('ga-playlist');
                         user = {};
-                        PlaylistFactory.playlist = {};
                 });
             };
 
