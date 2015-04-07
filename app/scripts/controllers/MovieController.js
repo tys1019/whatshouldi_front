@@ -9,4 +9,6 @@ function movieController(MovieFactory, $location, $routeParams) {
 
     vm.movies = MovieFactory.movies;
 
+    MovieFactory.getMovies();
+
 }

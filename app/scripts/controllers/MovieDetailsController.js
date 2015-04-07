@@ -30,14 +30,13 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
     };
 
 
-    vm.getRatings = function(){
+    vm.getRatingsAndReviews = function(){
+        if (!vm.movie.rt_ratings) MovieFactory.getMovieRatings(vm.movie.rottentomatoes_id);
 
+        if (!vm.movie.rt_ratings) MovieFactory.getMovieReviews(vm.movie.rottentomatoes_id);
     }
 
-    var getReviews = function(){
 
-    }
-
-    MovieFactory.getMovieDetails($routeParams.guideboxId).then(function(){debugger});
+    MovieFactory.getMovieDetails($routeParams.guideboxId).then(vm.getRatingsAndReviews);
 
 }
