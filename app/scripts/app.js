@@ -37,6 +37,11 @@ angular
         controller: 'PlaylistController',
         controllerAs: 'playlistController'
       })
+      .when('/search', {
+        templateUrl: 'views/search-results.html',
+        controller: 'SearchController',
+        controllerAs: 'searchController'
+      })
       .otherwise({
         redirectTo: '/'
       });

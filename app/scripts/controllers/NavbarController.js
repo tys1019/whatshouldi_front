@@ -24,4 +24,12 @@ function navbarController(AuthFactory, SearchFactory, $location) {
         return AuthFactory.isAuthenticated();
     };
 
+    vm.results = SearchFactory.results;
+    vm.displayResults = false;
+
+    vm.toggleDisplayResults = function(){
+        vm.displayResults = !vm.displayResults;
+        console.log(vm.displayResults);
+    }
+
 }
