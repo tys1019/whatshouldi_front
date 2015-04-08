@@ -29,6 +29,25 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
         }
     };
 
+    vm.hasStreamingLinks = function(){
+        if (!vm.movie.title) return false;
+        if (vm.movie.subscription_web_sources.length === 0 && !vm.movie.netflixLink) {
+            return false;
+        } else {
+            return true;
+        }
+
+    };
+
+    vm.hasFreeLinks = function(){
+        if (!vm.movie.title) return false;
+        if (vm.movie.free_web_sources.length === 0) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+
 
     vm.getMovieRatings = function(){
         if (!vm.movie.rt_ratings) {
