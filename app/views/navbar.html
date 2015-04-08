@@ -25,6 +25,7 @@
               <li ng-show="navbarController.isLoggedIn()"><a href="#/playlists/{{navbarController.user.playlist_id}}" >My Queue</a></li>
 
               <li ng-if="navbarController.isLoggedIn()"><a href="javascript:void(0)" ng-click="navbarController.logout()">Logout</a></li>
+
               <li ng-if="!navbarController.isLoggedIn()"> <a href="javascript:void(0)" ng-controller="ModalController as modalController" ng-click="modalController.openLogin()" > Login</a></li>
 
 

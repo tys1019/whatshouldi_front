@@ -1,10 +1,10 @@
-          <form class="form-inline" name="searchForm" ng-submit="navbarController.search(navbarController.search_params)">
+          <form class="form-inline" name="searchForm" ng-submit="searchController.search(searchController.search_params)">
             <div class="form-group">
-                <input id="search-query" type="text" name="search-query" ng-model="navbarController.search_params.search_query" class="form-control" required>
+                <input id="search-query" type="text" name="search-query" ng-model="searchController.search_params.search_query" class="form-control" required>
 
-                <select class="form-control" ng-model="navbarController.search_params.media_type" required>
+                <select class="form-control" ng-model="searchController.search_params.media_type" required>
                   <option selected>Movie</option>
-                  <option>TV</option>
+                  <!-- <option>TV</option> -->
                 </select>
 
                 <input type="submit" class="button-submit" ng-disabled="searchForm.$invalid" value="Search">

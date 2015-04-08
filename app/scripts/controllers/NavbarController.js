@@ -2,7 +2,7 @@
 
 angular.module('MainController').controller('NavbarController', navbarController);
 
-navbarController.$inject = ['AuthFactory', 'SearchFactory', '$location'];
+navbarController.$inject = ['AuthFactory', 'SearchFactory', '$location', ];
 
 function navbarController(AuthFactory, SearchFactory, $location) {
     var vm = this;
@@ -16,7 +16,9 @@ function navbarController(AuthFactory, SearchFactory, $location) {
     };
 
     vm.search = function(){
-        SearchFactory.search(vm.search_params);
+        SearchFactory.search(vm.search_params).then(function(response){
+            vm.$modalInstance.close(response);
+        });
     };
 
 
@@ -24,10 +26,5 @@ function navbarController(AuthFactory, SearchFactory, $location) {
         return AuthFactory.isAuthenticated();
     };
 
-    $('.main-content').on('click', function(){
-        // if ($('#navbar-collapse-1').hasClass('in')) {
-            console.log('click');
-        // }
-    });
 
 }

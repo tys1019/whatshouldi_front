@@ -34,7 +34,7 @@ function modalController($modal) {
   vm.openSearch = function() {
     var modalInstance = $modal.open({
       templateUrl: 'views/search-form.html',
-      controller: 'NavbarController as navbarController'
+      controller: 'SearchController as searchController'
     });
 
     modalInstance.result.then(function (data) {

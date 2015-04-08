@@ -39,8 +39,8 @@ angular
       })
       .when('/search', {
         templateUrl: 'views/search-results.html',
-        controller: 'SearchController',
-        controllerAs: 'searchController'
+        controller: 'SearchResultsController',
+        controllerAs: 'searchResultsController'
       })
       .otherwise({
         redirectTo: '/'

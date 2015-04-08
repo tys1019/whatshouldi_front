@@ -56,12 +56,12 @@ angular
 
             var getNetflixLink = function(movie) {
                 return $http.get('http://netflixroulette.net/api/api.php?title=' + movie.title).success(function(response){
-                    movie.netflixLink = "http://www.netflix.com/WiMovie/" + response.show_id
+                    movie.netflixLink = 'http://www.netflix.com/WiMovie/' + response.show_id;
                 }).error(function(data,status,headers,config){
                     console.log(data.message);
-                    movie.netflixLink = "http://dvd.netflix.com/Search?v1=" + movie.title + "&ac_abs_posn=-1&fcld=true&ac_rel_posn=-1&ac_category_type=none"
+                    movie.netflixLink = 'http://dvd.netflix.com/Search?v1=' + movie.title + '&ac_abs_posn=-1&fcld=true&ac_rel_posn=-1&ac_category_type=none';
                 });
-            }
+            };
 
             return {
                 movies: movies,
