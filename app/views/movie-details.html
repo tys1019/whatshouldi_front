@@ -18,11 +18,11 @@
 <!-- {{movieDetailsController.movie.purchase_web_sources}} -->
 
 <h3>Purchase</h3>
-<a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+<a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.purchase_web_sources track by $id(source)" ng-href="{{source.link}}">{{source.display_name}}</a>
 
 <div id="streaming-links" ng-if="movieDetailsController.hasStreamingLinks()">
     <h3>Streaming</h3>
-    <a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.subscription_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+    <a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.subscription_web_sources track by $id(source)" ng-href="{{source.link}}">{{source.display_name}}</a>
     <a class="btn btn-default" ng-if="movieDetailsController.movie.netflixLink" ng-href="{{movieDetailsController.movie.netflixLink}}
     ">Search Netflix</a>
 </div>
@@ -30,6 +30,6 @@
 
 <div id="free-links" ng-if="movieDetailsController.hasFreeLinks()">
     <h3>Free</h3>
-    <a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.free_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+    <a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.free_web_sources track by $id(source)" ng-href="{{source.link}}">{{source.display_name}}</a>
 </div>
 

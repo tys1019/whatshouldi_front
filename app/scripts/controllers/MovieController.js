@@ -11,4 +11,9 @@ function movieController(MovieFactory, $location, $routeParams) {
 
     MovieFactory.getMovies();
 
+    $('.main-content').on('click', function(){
+        if ($('#navbar-collapse-1').hasClass('in')) {
+            $(".navbar-toggle").click();
+        }
+    });
 }

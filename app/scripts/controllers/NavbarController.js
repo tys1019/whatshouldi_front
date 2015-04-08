@@ -24,4 +24,10 @@ function navbarController(AuthFactory, SearchFactory, $location) {
         return AuthFactory.isAuthenticated();
     };
 
+    $('.main-content').on('click', function(){
+        // if ($('#navbar-collapse-1').hasClass('in')) {
+            console.log('click');
+        // }
+    });
+
 }

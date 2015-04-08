@@ -30,4 +30,15 @@ function modalController($modal) {
       console.log(data);
     });
   };
+
+  vm.openSearch = function() {
+    var modalInstance = $modal.open({
+      templateUrl: 'views/search-form.html',
+      controller: 'NavbarController as navbarController'
+    });
+
+    modalInstance.result.then(function (data) {
+      console.log(data);
+    });
+  }
 };

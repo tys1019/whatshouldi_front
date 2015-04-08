@@ -59,6 +59,7 @@ angular
                     movie.netflixLink = "http://www.netflix.com/WiMovie/" + response.show_id
                 }).error(function(data,status,headers,config){
                     console.log(data.message);
+                    movie.netflixLink = "http://dvd.netflix.com/Search?v1=" + movie.title + "&ac_abs_posn=-1&fcld=true&ac_rel_posn=-1&ac_category_type=none"
                 });
             }
 
