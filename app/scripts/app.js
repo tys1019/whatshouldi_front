@@ -51,12 +51,11 @@ angular
       return $sce.trustAsResourceUrl(url);
     };
   })
-  .run(function (MovieFactory, AuthFactory, PlaylistFactory, $rootScope){
+  .run(function (MovieFactory, AuthFactory, PlaylistFactory, $rootScope, $timeout, $window){
     MovieFactory.getMovies();
     if (AuthFactory.user.playlist_id) {
       PlaylistFactory.getPlaylist(AuthFactory.user.playlist_id);
     };
-
 
     // $rootScope.$on("$routeChangeStart", function (event, next, current) {
     //   if (next) {

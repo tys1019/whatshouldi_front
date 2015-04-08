@@ -36,6 +36,14 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
         } else {
             return true;
         }
+    };
+
+    vm.hasPurchaseLinks = function(){
+        if (!vm.movie.title || vm.movie.subscription_web_sources.length === 0) {
+            return false;
+        } else {
+            return true;
+        }
 
     };
 
@@ -74,5 +82,9 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
             $(".navbar-toggle").click();
         }
     });
+
+    vm.test = function(){
+        console.log(test)
+    };
 
 }

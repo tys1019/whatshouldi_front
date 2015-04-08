@@ -9,7 +9,7 @@
 
     <h3>{{movieDetailsController.movie.overview}}</h3>
     <img ng-src="{{movieDetailsController.movie.poster_path}}" alt="">
-    <img class="blurred-background" ng-src="{{movieDetailsController.movie.poster_path}}" alt="">
+    <img class="blurred-background" ng-src="{{movieDetailsController.movie.poster_path}}" alt="" imageonload="vm.test()">
 
 
     <div ng-if="!!movieDetailsController.movie.trailer">
@@ -19,8 +19,11 @@
 
     <!-- {{movieDetailsController.movie.purchase_web_sources}} -->
 
-    <h3>Purchase</h3>
-    <a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+    <div id="purchase-links" ng-if="movieDetailsController.hasPurchaseLinks()">
+        <h3>Purchase</h3>
+        <a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+    </div>
+
 
     <div id="streaming-links" ng-if="movieDetailsController.hasStreamingLinks()">
         <h3>Streaming</h3>

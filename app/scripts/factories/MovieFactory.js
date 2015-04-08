@@ -7,26 +7,21 @@ angular
             var movie = {};
 
             var getMovies = function() {
-                $('.ajax-preloader').addClass('submitted');
-
                 $http.get(ServerUrl + '/movies').success(function(response){
                     angular.copy(response, movies);
-                    $('.ajax-preloader').removeClass('submitted');
-
                 }).error(function(data,status,headers,config){
                     console.log('Youre doing it wrong ' + data, status, headers, config);
                 });
             };
 
             var getMovieDetails = function(guideboxId) {
-                $('.ajax-preloader').addClass('submitted');
-                return $http.post(ServerUrl + '/search', {guidebox_id: guideboxId, media_type: 'Movie'}).success(function(response){
+
                     angular.copy({}, movie);
+
+                return $http.post(ServerUrl + '/search', {guidebox_id: guideboxId, media_type: 'Movie'}).success(function(response){
                     angular.copy(response.movie, movie);
 
                     _parseJSON();
-
-                    $('.ajax-preloader').removeClass('submitted');
 
                 }).error(function(data,status,headers,config){
                     console.log('Youre doing it wrong ' + data, status, headers, config);
