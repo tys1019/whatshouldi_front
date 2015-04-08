@@ -1,0 +1,15 @@
+div#moviedetails {
+        // border: 10px solid blue;
+
+    img.blurred-background {
+
+        z-index: -1;
+        -webkit-filter: blur(30px) opacity(50%);
+        filter: blur(30px) opacity(50%);
+        width: 98vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+    }
+}
