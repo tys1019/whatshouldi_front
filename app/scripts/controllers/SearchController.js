@@ -13,6 +13,6 @@ function searchController(SearchFactory, $location) {
     vm.toggleDisplayResults = function(){
         vm.displayResults = !vm.displayResults;
         console.log(vm.displayResults);
-    }
+    };
 
 }

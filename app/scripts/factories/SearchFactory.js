@@ -12,7 +12,7 @@ angular
                 }).error(function(data,status,headers,config){
                     console.log('Youre doing it wrong ' + data, status, headers, config);
                 });
-            }
+            };
 
             return {
                 results: results,

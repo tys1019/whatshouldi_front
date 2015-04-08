@@ -10,3 +10,7 @@
 <h3>{{movieDetailsController.movie.overview}}</h3>
 <img ng-src="{{movieDetailsController.movie.poster_path}}" alt="">
 <iframe ng-if"{{movieDetailsController.movie.trailer}}" width='640' height='360' ng-src="{{movieDetailsController.movie.trailer | trustUrl}}" frameborder='0' scrolling='no'></iframe>
+
+{{movieDetailsController.movie.purchase_web_sources}}
+{{movieDetailsController.movie.netflixLink}}
+

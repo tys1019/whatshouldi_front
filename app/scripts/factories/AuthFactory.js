@@ -28,7 +28,9 @@ angular
 
             var isAuthenticated = function(){
                 var user = JSON.parse($window.localStorage.getItem('ga-user'));
-                if(user) return !!user.token;
+                if(user) {
+                    return !!user.token;
+                };
                 return false;
             };
 

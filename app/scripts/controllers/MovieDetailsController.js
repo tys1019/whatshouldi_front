@@ -10,7 +10,7 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
     vm.movie = MovieFactory.movie;
 
     vm.isAuthenticated = function(){
-        return AuthFactory.isAuthenticated()
+        return AuthFactory.isAuthenticated();
     };
 
 
@@ -30,13 +30,24 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
     };
 
 
-    vm.getRatingsAndReviews = function(){
-        if (!vm.movie.rt_ratings) MovieFactory.getMovieRatings(vm.movie.rottentomatoes_id);
+    vm.getMovieRatings = function(){
+        if (!vm.movie.rt_ratings) {
+            MovieFactory.getMovieRatings(vm.movie.rottentomatoes_id);
+        };
+    };
 
-        if (!vm.movie.rt_ratings) MovieFactory.getMovieReviews(vm.movie.rottentomatoes_id);
+    vm.getMovieReviews = function(){
+
+        if (!vm.movie.rt_reviews) {
+            MovieFactory.getMovieReviews(vm.movie.rottentomatoes_id);
+        };
     }
 
+    vm.getNetflixLink = function() {
+        MovieFactory.getNetflixLink(vm.movie);
+    };
 
-    MovieFactory.getMovieDetails($routeParams.guideboxId).then(vm.getRatingsAndReviews);
+
+    MovieFactory.getMovieDetails($routeParams.guideboxId).then(vm.getMovieRatings).then(vm.getMovieReviews).then(vm.getNetflixLink);
 
 }

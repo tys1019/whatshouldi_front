@@ -15,6 +15,6 @@ function signUpController($location, AuthFactory, $modalInstance, PlaylistFactor
             vm.$modalInstance.close(response);
             vm.credentials = {};
             PlaylistFactory.getPlaylistByUser(AuthFactory.user);
-        })
+        });
     };
 }
