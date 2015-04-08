@@ -1,40 +1,51 @@
 
 <div id="moviedetails">
-    <h1>{{movieDetailsController.movie.title}}</h1>
 
-    <div ng-show="movieDetailsController.isAuthenticated()">
-        <button ng-hide="movieDetailsController.isInPlaylist()" class="button btn-success" ng-click="movieDetailsController.updatePlaylist()">Add to Playlist</button>
-        <button ng-show="movieDetailsController.isInPlaylist()" class="button btn-danger" ng-click="movieDetailsController.updatePlaylist()">Remove from Playlist</button>
+
+    <img class="poster-large" ng-src="{{movieDetailsController.movie.poster_path}}" alt="">
+
+    <div id="movieinfo">
+        <h1>{{movieDetailsController.movie.title}}</h1>
+
+        <div ng-show="movieDetailsController.isAuthenticated()">
+            <button ng-hide="movieDetailsController.isInPlaylist()" class="btn btn-xs btn-success" ng-click="movieDetailsController.updatePlaylist()">Add to Playlist</button>
+            <button ng-show="movieDetailsController.isInPlaylist()" class="btn btn-xs btn-danger" ng-click="movieDetailsController.updatePlaylist()">Remove from Playlist</button>
+            <a class="btn btn-xs btn-default trailer-button" ng-href="{{movieDetailsController.movie.trailer | trustUrl}}">Watch Trailer</a>
+        </div>
+
+        <p>{{movieDetailsController.movie.overview}}</p>
+
+        <div id="web-links">
+            <div id="purchase-links" ng-if="movieDetailsController.hasPurchaseLinks()">
+                <h3>Purchase</h3>
+                <a class="btn btn-xs btn-default" ng-repeat="source in movieDetailsController.movie.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+            </div>
+
+
+            <div id="streaming-links" ng-if="movieDetailsController.hasStreamingLinks()">
+                <h3>Streaming</h3>
+                <a class="btn btn-xs btn-default" ng-repeat="source in movieDetailsController.movie.subscription_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+                <a class="btn btn-xs btn-default" ng-if="movieDetailsController.movie.netflixLink" ng-href="{{movieDetailsController.movie.netflixLink}}
+                ">Search Netflix</a>
+            </div>
+
+
+            <div id="free-links" ng-if="movieDetailsController.hasFreeLinks()">
+                <h3>Free</h3>
+                <a class="btn btn-xs btn-default" ng-repeat="source in movieDetailsController.movie.free_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+            </div>
+        </div>
     </div>
 
-    <h3>{{movieDetailsController.movie.overview}}</h3>
-    <img ng-src="{{movieDetailsController.movie.poster_path}}" alt="">
+
     <img class="blurred-background" ng-src="{{movieDetailsController.movie.poster_path}}" alt="" imageonload="vm.test()">
 
 
-    <div ng-if="!!movieDetailsController.movie.trailer">
-        <iframe width='640' height='360' ng-src="{{movieDetailsController.movie.trailer | trustUrl}}" frameborder='0' scrolling='no'></iframe>
+    <div class="movie-trailer" ng-if="!!movieDetailsController.movie.trailer">
+        <iframe class="trailer-iframe" width='640' height='360' ng-src="{{movieDetailsController.movie.trailer | trustUrl}}" frameborder='0' scrolling='no'></iframe>
+
 
     </div>
 
-    <!-- {{movieDetailsController.movie.purchase_web_sources}} -->
 
-    <div id="purchase-links" ng-if="movieDetailsController.hasPurchaseLinks()">
-        <h3>Purchase</h3>
-        <a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
-    </div>
-
-
-    <div id="streaming-links" ng-if="movieDetailsController.hasStreamingLinks()">
-        <h3>Streaming</h3>
-        <a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.subscription_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
-        <a class="btn btn-default" ng-if="movieDetailsController.movie.netflixLink" ng-href="{{movieDetailsController.movie.netflixLink}}
-        ">Search Netflix</a>
-    </div>
-
-
-    <div id="free-links" ng-if="movieDetailsController.hasFreeLinks()">
-        <h3>Free</h3>
-        <a class="btn btn-default" ng-repeat="source in movieDetailsController.movie.free_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
-    </div>
 </div>

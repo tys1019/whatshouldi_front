@@ -131,3 +131,9 @@
     @content;
   }
 }
+
+@mixin media-query($val) {
+  @media (max-width: $val) {
+    @content;
+  }
+}

@@ -1,5 +1,6 @@
 body {
-  padding-top: 50px;
+  padding-top: 80px;
   background-color: #2b2b2b;
   font-family: 'Roboto', sans-serif;
+  @extend .container_notbs;
 }

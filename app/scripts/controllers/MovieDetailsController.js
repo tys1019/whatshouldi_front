@@ -2,9 +2,9 @@
 
 angular.module('MainController').controller('MovieDetailsController', movieDetailsController);
 
-movieDetailsController.$inject = ['MovieFactory', '$location', '$routeParams', '$window', 'PlaylistFactory', 'AuthFactory'];
+movieDetailsController.$inject = ['MovieFactory', '$location', '$routeParams', '$window', 'PlaylistFactory', 'AuthFactory', '$scope'];
 
-function movieDetailsController(MovieFactory, $location, $routeParams, $window, PlaylistFactory, AuthFactory) {
+function movieDetailsController(MovieFactory, $location, $routeParams, $window, PlaylistFactory, AuthFactory, $scope) {
     var vm = this;
 
     vm.movie = MovieFactory.movie;
@@ -82,9 +82,4 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
             $(".navbar-toggle").click();
         }
     });
-
-    vm.test = function(){
-        console.log(test)
-    };
-
 }
