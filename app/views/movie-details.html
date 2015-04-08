@@ -7,18 +7,22 @@
     <div id="movieinfo">
         <h1>{{movieDetailsController.movie.title}}</h1>
 
-        <div ng-show="movieDetailsController.isAuthenticated()">
-            <button ng-hide="movieDetailsController.isInPlaylist()" class="btn btn-xs btn-success" ng-click="movieDetailsController.updatePlaylist()">Add to Playlist</button>
-            <button ng-show="movieDetailsController.isInPlaylist()" class="btn btn-xs btn-danger" ng-click="movieDetailsController.updatePlaylist()">Remove from Playlist</button>
+
+
+        <div>
             <a class="btn btn-xs btn-default trailer-button" ng-href="{{movieDetailsController.movie.trailer | trustUrl}}">Watch Trailer</a>
+            <button ng-show="!movieDetailsController.isInPlaylist() && movieDetailsController.isAuthenticated()" class="btn btn-xs btn-success" ng-click="movieDetailsController.updatePlaylist()">Add to Playlist</button>
+            <button ng-show="movieDetailsController.isInPlaylist() && movieDetailsController.isAuthenticated()" class="btn btn-xs btn-danger" ng-click="movieDetailsController.updatePlaylist()">Remove from Playlist</button>
         </div>
 
         <p>{{movieDetailsController.movie.overview}}</p>
 
         <div id="web-links">
-            <div id="purchase-links" ng-if="movieDetailsController.hasPurchaseLinks()">
+            <div class="movie-links" ng-if="movieDetailsController.hasPurchaseLinks()">
                 <h3>Purchase</h3>
-                <a class="btn btn-xs btn-default" ng-repeat="source in movieDetailsController.movie.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+                <div id="purchase-links">
+                    <a class="btn btn-xs btn-default" ng-repeat="source in movieDetailsController.movie.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+                </div>
             </div>
 
 
@@ -39,13 +43,6 @@
 
 
     <img class="blurred-background" ng-src="{{movieDetailsController.movie.poster_path}}" alt="" imageonload="vm.test()">
-
-
-    <div class="movie-trailer" ng-if="!!movieDetailsController.movie.trailer">
-        <iframe class="trailer-iframe" width='640' height='360' ng-src="{{movieDetailsController.movie.trailer | trustUrl}}" frameborder='0' scrolling='no'></iframe>
-
-
-    </div>
 
 
 </div>

@@ -19,7 +19,7 @@ div#moviedetails {
     }
 
     div#movieinfo {
-      @extend .grid_9;
+      @extend .grid_10;
       background: rgba(255,255,255, 0.5);
       padding: 30px;
 
@@ -30,34 +30,5 @@ div#moviedetails {
       p {
         padding-top: 10px;
       }
-
-      a.trailer-button {
-            display: none;
-
-            @include media-query(700px) {
-                display: inline-block;
-            }
-      }
-
-    }
-
-    div.movie-trailer {
-        @extend .grid_16;
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 35px;
-        height: 0;
-        overflow: hidden;
-        @include media-query(700px) {
-                display: none;
-            }
-
-        iframe.trailer-iframe {
-            position: absolute;
-            top:0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
     }
 }

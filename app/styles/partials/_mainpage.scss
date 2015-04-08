@@ -1,39 +1,21 @@
 div.movie-index {
-  display: inline;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-around;
+
 
   img.main-page-poster {
-    max-height: 250px;
-  }
-}
+    width: 29%;
+    margin: 2%;
 
-div.preloader {
-  width: 100%;
-  height: 64px;
-  display: none;
-  &.submitted {
-    display: block;
+    @include media-query(760px) {
+      width: 28%;
+    }
 
-    background-position: center center;
-  }
-}
-
-div.ajax-preloader {
-  z-index: $z-ajax-preloader;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  background: $white;
-  background: rgba(255,255,255,0.9);
-  &.submitted {
-    display: block;
-    div.animation{
-      margin: 33% auto;
-
-      width: 64px;
-      height: 64px;
+    @include media-query(450px) {
+      width: 45%;
     }
   }
 }
+
+

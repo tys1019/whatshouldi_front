@@ -1,33 +1,37 @@
-<h2>Register </h2>
+<div class="modal-header">
 
+    <h2>Register </h2>
+</div>
 
 <form class="sign-up-form" name="signUpForm" ng-submit="signUpController.signUp(signUpController.credentials)" novalidate>
     <div class="form-group">
-        <input id="firstname" type="text" name="firstname" ng-model="signUpController.credentials.user.first_name" required>
-        <label id="firstname-label" for="firstname">First Name</label>
+        <input id="firstname" class="form-control" type="text" name="firstname" ng-model="signUpController.credentials.user.first_name" placeholder="First Name" required>
+
     </div>
 
     <div class="form-group">
-        <input id="lastname" type="text" name="lastname" ng-model="signUpController.credentials.user.last_name" required>
-        <label id="lastname-label" for="lastname">Last Name</label>
+        <input id="lastname" class="form-control" type="text" name="lastname" ng-model="signUpController.credentials.user.last_name" placeholder="Last Name" required>
+
     </div>
 
     <div class="form-group">
-        <input id="email" type="text" name="email" ng-model="signUpController.credentials.user.email" required>
-        <label id="email-label" for="email">Email Address</label>
+        <input id="email" class="form-control" type="email" name="email" ng-model="signUpController.credentials.user.email" placeholder="Email" required>
+
     </div>
 
     <div class="form-group">
-        <input id="username" type="text" name="username" ng-model="signUpController.credentials.user.username" required>
-        <label id="username-label" for="username">Username</label>
+        <input id="username" class="form-control" type="text" name="username" ng-model="signUpController.credentials.user.username" placeholder="Username" required>
+
     </div>
 
     <div class="form-group">
-        <input id="password" type="password" name="password" ng-model="signUpController.credentials.user.password" required>
-        <label id="password-label" for="password">password</label>
-    </div>
+        <input id="password" class="form-control" type="password" name="password" ng-model="signUpController.credentials.user.password" placeholder="Password" required>
 
-    <div class="form-group">
-        <input type="submit" class="button-submit" ng-disabled="signUpForm.$invalid" value="Register">
+    </div>
+    <div class="modal-footer">
+
+        <div class="form-group">
+            <input type="submit" class="btn button-submit" ng-disabled="signUpForm.$invalid" value="Register">
+        </div>
     </div>
 </form>

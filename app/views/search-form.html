@@ -1,12 +1,27 @@
-          <form class="form-inline" name="searchForm" ng-submit="searchController.search(searchController.search_params)">
-            <div class="form-group">
-                <input id="search-query" type="text" name="search-query" ng-model="searchController.search_params.search_query" class="form-control" required>
+<div class="modal-header">
 
-                <select class="form-control" ng-model="searchController.search_params.media_type" required>
-                  <option selected>Movie</option>
-                  <!-- <option>TV</option> -->
-                </select>
+    <h2>Search </h2>
+</div>
 
-                <input type="submit" class="button-submit" ng-disabled="searchForm.$invalid" value="Search">
-              </div>
-          </form>
+
+<form name="searchForm" ng-submit="searchController.search(searchController.search_params)">
+  <div class="form-group">
+      <select class="form-inline" ng-model="searchController.search_params.media_type" required>
+        <option selected>Movie</option>
+        <!-- <option>TV</option> -->
+      </select>
+
+      <input id="search-query" type="text" name="search-query" ng-model="searchController.search_params.search_query" class="form-control" placeholder="Search title" required>
+    </div>
+
+    <div class="modal-footer">
+
+        <div class="form-group">
+          <input type="submit" class="btn button-submit" ng-disabled="searchForm.$invalid" value="Search">
+        </div>
+    </div>
+
+
+
+
+</form>

@@ -8,17 +8,9 @@
 </div> -->
 
 
-
-<div class="row marketing">
-  <section>
-      <header><h1>All da movies</h1></header>
-
+<div class="movie-container">
         <div class="movie-index">
           <a ng-repeat="movie in movieController.movies" ng-href="#/movie/{{movie.guidebox_id}}" id="{{movie.guidebox_id}}">
           <img class="main-page-poster" ng-src="{{movie.thumbnail}}" alt="{{movie.title}}">
         </div>
-
-
-  </section>
-
 </div>
