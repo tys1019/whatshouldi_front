@@ -1,12 +1,12 @@
 
-<div id="moviedetails">
+<div id="moviedetails" ng-if="movieDetailsController.movie">
     <img class="poster-large" ng-src="{{movieDetailsController.movie.poster_path}}" alt="">
 
     <img class="blurred-background" ng-src="{{movieDetailsController.movie.poster_path}}" alt="" imageonload="vm.test()">
 
 
 
-    <div id="movieinfo">
+    <div id="movieinfo" >
 
         <div id="movie-header">
             <h1>{{movieDetailsController.movie.title}}</h1>
@@ -61,11 +61,11 @@
         </section>
     </div>
 
-    <div id="review-container">
+    <div id="review-container" ng-if="movieDetailsController.movie.rt_reviews">
 
         <div id="movie-reviews" >
             <button type="toggle" class="btn btn-xs" id="toggle-reviews" ng-click="movieDetailsController.showReviews = !movieDetailsController.showReviews"><span ng-hide="movieDetailsController.showReviews">Show</span><span ng-show="movieDetailsController.showReviews">Hide</span> Reviews</button>
-            <article class="review" ng-repeat="review in movieDetailsController.movie.rt_reviews" ng-if="movieDetailsController.showReviews">
+            <article class="review" ng-repeat="review in movieDetailsController.movie.rt_reviews" ng-if="movieDetailsController.showReviews ">
                 <h4>{{review.critic}} </h4>
                 <p>{{review.quote}} - <a ng-href="{{review.links.review}}">{{review.publication}}</a></p>
             </article>
