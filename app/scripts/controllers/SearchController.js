@@ -13,6 +13,8 @@ function searchController(SearchFactory, $location, $modalInstance) {
     if ($modalInstance) vm.$modalInstance = $modalInstance;
 
     vm.search = function(){
+        console.log("search_params");
+        console.log(vm.search_params);
         SearchFactory.search(vm.search_params).then(function(response){
             vm.$modalInstance.close(response);
         });
