@@ -1,3 +1,17 @@
+
+
+div.modal-content {
+  background-color: #2d2d2d;
+    div.modal-header {
+      background-color: #222222;
+      border-bottom: 1px solid #191919;
+      color: #3B6D80;
+    }
+    div.modal-footer {
+      border-top: 1px solid #323232;
+    }
+}
+
 form {
 
   div.form-group {
@@ -5,6 +19,13 @@ form {
     input.form-control {
       width: 90%;
       margin: 20px auto;
+    }
+    div#search-params {
+      padding: 0 30px;
+
+      input#search-query {
+        width: 100%;
+      }
     }
   }
 }

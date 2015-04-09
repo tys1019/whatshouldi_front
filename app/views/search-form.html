@@ -6,12 +6,16 @@
 
 <form name="searchForm" ng-submit="searchController.search(searchController.search_params)">
   <div class="form-group">
-      <select class="form-inline" ng-model="searchController.search_params.media_type" required>
-        <option selected>Movie</option>
-        <!-- <option>TV</option> -->
-      </select>
 
-      <input id="search-query" type="text" name="search-query" ng-model="searchController.search_params.search_query" class="form-control" placeholder="Search title" required>
+      <div class="input-group" id="search-params">
+        <input id="search-query" type="text" name="search-query" ng-model="searchController.search_params.search_query" class="form-control" placeholder="Search title" required>
+
+          <select selectpicker="" ng-model="searchController.search_params.media_type" required>
+            <option selected>Movie</option>
+          </select>
+
+
+       </div>
     </div>
 
     <div class="modal-footer">
