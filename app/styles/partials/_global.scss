@@ -2,7 +2,11 @@ body {
   padding-top: 80px;
   background-color: #2b2b2b;
   font-family: 'Roboto', sans-serif;
+}
+
+div.content-container {
   @extend .container_notbs;
+
 }
 
 .btn {

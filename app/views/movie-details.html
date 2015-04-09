@@ -2,6 +2,7 @@
 <div id="moviedetails">
     <img class="poster-large" ng-src="{{movieDetailsController.movie.poster_path}}" alt="">
 
+    <img class="blurred-background" ng-src="{{movieDetailsController.movie.poster_path}}" alt="" imageonload="vm.test()">
 
 
 
@@ -59,8 +60,17 @@
         </section>
     </div>
 
-
-    <img class="blurred-background" ng-src="{{movieDetailsController.movie.poster_path}}" alt="" imageonload="vm.test()">
+    <div id="review-container">
+        <div id="movie-reviews">
+            <!-- {{movieDetailsController.movie.rt_reviews}} -->
+            <article class="review" ng-repeat="review in movieDetailsController.movie.rt_reviews">
+                <h4>{{review.critic}} </h4>
+                <p>{{review.quote}} - <a ng-href="{{review.links.review}}">{{review.publication}}</a></p>
+            </article>
+        </div>
+    </div>
 
 
 </div>
+<!--
+{"critic":"Tom Charity","date":"2010-07-06","freshness":"fresh","publication":"CNN.com","quote":"Funny and poignant and full of life, Up easily qualifies as one of the best movies of the year so far. Go with someone you care about.","links":{"review":"http://www.cnn.com/2009/SHOWBIZ/Movies/05/29/up.movie/index.html?iref=mpstoryview"}} -->
