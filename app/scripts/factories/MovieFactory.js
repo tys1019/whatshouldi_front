@@ -24,7 +24,6 @@ angular
                     angular.copy(response.movie, movie);
 
                     _parseJSON();
-                    // debugger
                 }).error(function(data,status,headers,config){
                     console.log('Youre doing it wrong ' + data, status, headers, config);
                 });
@@ -32,8 +31,7 @@ angular
 
             var getMovieRatings = function(rottentomatoes_id) {
                 return $http.post(ServerUrl + '/search', {rottentomatoes_id: rottentomatoes_id, search_type: 'rt_ratings'}).success(function(response){
-                    angular.copy(response.movie.rt_ratings, movie.rt_ratings);
-
+                    movie.rt_ratings = JSON.parse(response.movie.rt_ratings);
                 }).error(function(data,status,headers,config){
                     console.log('Youre doing it wrong ' + data, status, headers, config);
                 });
@@ -42,8 +40,7 @@ angular
 
             var getMovieReviews = function(rottentomatoes_id) {
                 return $http.post(ServerUrl + '/search', {rottentomatoes_id: rottentomatoes_id, search_type: 'rt_reviews'}).success(function(response){
-                    angular.copy(response.movie.reviews, movie.reviews);
-
+                    movie.rt_reviews = JSON.parse(response.movie.rt_reviews);
                 }).error(function(data,status,headers,config){
                     console.log('Youre doing it wrong ' + data, status, headers, config);
                 });

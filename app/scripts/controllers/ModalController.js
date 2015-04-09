@@ -14,10 +14,6 @@ function modalController($modal) {
       templateUrl: 'views/login-form.html',
       controller: 'LoginController as loginController'
     });
-
-    modalInstance.result.then(function (data) {
-      console.log(data);
-    });
   };
 
   vm.openSignUp = function () {
@@ -25,20 +21,12 @@ function modalController($modal) {
       templateUrl: 'views/sign-up-form.html',
       controller: 'SignUpController as signUpController'
     });
-
-    modalInstance.result.then(function (data) {
-      console.log(data);
-    });
   };
 
   vm.openSearch = function() {
     var modalInstance = $modal.open({
       templateUrl: 'views/search-form.html',
       controller: 'SearchController as searchController'
-    });
-
-    modalInstance.result.then(function (data) {
-      console.log(data);
     });
   };
 };

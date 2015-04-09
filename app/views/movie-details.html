@@ -9,7 +9,7 @@
 
         <div id="movie-header">
             <h1>{{movieDetailsController.movie.title}}</h1>
-            <div id="rt-ratings">
+            <div id="rt-ratings" ng-if="movieDetailsController.movie.rt_ratings">
                 <h4 class="review-scores">Critics: {{movieDetailsController.movie.rt_ratings.critics_score}}%
                     <span ng-show="movieDetailsController.movie.rt_ratings.critics_score >= 70" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
                     <span ng-show="movieDetailsController.movie.rt_ratings.critics_score < 70" class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
