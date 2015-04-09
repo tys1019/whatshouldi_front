@@ -12,6 +12,17 @@ body {
   width: 23%;
   margin: 1%;
   overflow: hidden;
+  transition: background-color 0.2s ease;
+
+
+    @include media-query(400px) {
+      width: 48%;
+    }
+}
+
+.btn:hover {
+  color: #222222;
+  background-color: #3B6D80;
 }
 
 .btn[disabled] {
