@@ -12,4 +12,10 @@ function playlistController(PlaylistFactory, $location, $routeParams, trustUrl) 
     PlaylistFactory.getPlaylist($routeParams.playlistId);
 
 
+    $('.main-content').on('click', function(){
+        if ($('#navbar-collapse-1').hasClass('in')) {
+            $(".navbar-toggle").click();
+        }
+    });
+
 }

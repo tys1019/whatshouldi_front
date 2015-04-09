@@ -40,5 +40,5 @@ function modalController($modal) {
     modalInstance.result.then(function (data) {
       console.log(data);
     });
-  }
+  };
 };

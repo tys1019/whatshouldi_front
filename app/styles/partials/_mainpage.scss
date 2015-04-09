@@ -1,11 +1,13 @@
 div.movie-index {
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: space-around;
+  h1 {
+    color: #3B6D80;
+    margin: 20px;
+    text-align: center;
+  }
 
 
   img.main-page-poster {
-    width: 29%;
+    width: 20%;
     margin: 2%;
 
     @include media-query(760px) {

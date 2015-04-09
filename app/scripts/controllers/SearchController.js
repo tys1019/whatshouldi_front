@@ -13,7 +13,6 @@ function searchController(SearchFactory, $location, $modalInstance) {
     if ($modalInstance) vm.$modalInstance = $modalInstance;
 
     vm.search = function(){
-        debugger
         SearchFactory.search(vm.search_params).then(function(response){
             vm.$modalInstance.close(response);
         });
@@ -23,7 +22,7 @@ function searchController(SearchFactory, $location, $modalInstance) {
 
     $('.main-content').on('click', function(){
         if ($('#navbar-collapse-1').hasClass('in')) {
-            $(".navbar-toggle").click();
+            $('.navbar-toggle').click();
         }
     });
 

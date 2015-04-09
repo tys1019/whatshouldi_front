@@ -7,6 +7,8 @@ angular
             var movie = {};
 
             var getMovies = function() {
+                    angular.copy([], movies);
+
                 $http.get(ServerUrl + '/movies').success(function(response){
                     angular.copy(response, movies);
                 }).error(function(data,status,headers,config){
@@ -22,7 +24,6 @@ angular
                     angular.copy(response.movie, movie);
 
                     _parseJSON();
-
                 }).error(function(data,status,headers,config){
                     console.log('Youre doing it wrong ' + data, status, headers, config);
                 });

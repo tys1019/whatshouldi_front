@@ -10,9 +10,9 @@
 
 
         <div>
-            <a class="btn btn-xs btn-default trailer-button" ng-href="{{movieDetailsController.movie.trailer | trustUrl}}">Watch Trailer</a>
-            <button ng-show="!movieDetailsController.isInPlaylist() && movieDetailsController.isAuthenticated()" class="btn btn-xs btn-success" ng-click="movieDetailsController.updatePlaylist()">Add to Playlist</button>
-            <button ng-show="movieDetailsController.isInPlaylist() && movieDetailsController.isAuthenticated()" class="btn btn-xs btn-danger" ng-click="movieDetailsController.updatePlaylist()">Remove from Playlist</button>
+            <a class="btn btn-xs btn-default trailer-button" ng-show="movieDetailsController.movie.trailer" ng-href="{{movieDetailsController.movie.trailer | trustUrl}}">Watch Trailer</a>
+            <button ng-show="!movieDetailsController.isInPlaylist() && movieDetailsController.isAuthenticated()" class="btn btn-xs btn-success" ng-click="movieDetailsController.updatePlaylist()">Add to Queue</button>
+            <button ng-show="movieDetailsController.isInPlaylist() && movieDetailsController.isAuthenticated()" class="btn btn-xs btn-danger" ng-click="movieDetailsController.updatePlaylist()">Remove from Queue</button>
         </div>
 
         <p>{{movieDetailsController.movie.overview}}</p>

@@ -9,13 +9,17 @@ function loginController($location, AuthFactory, $modalInstance, PlaylistFactory
     vm.$modalInstance = $modalInstance;
 
     vm.login = function(credentials){
-        AuthFactory.login(credentials).then(function(response){
+        AuthFactory.login(credentials).success(function(response){
             vm.$modalInstance.close(response);
             vm.credentials = {};
-        }).then(function(){
             PlaylistFactory.getPlaylist(AuthFactory.user.playlist_id);
+        }).error(function(){
+            debugger;
+            vm.hasErrors = true;
         });
     };
+
+    vm.hasErrors = true;
 
 
 }

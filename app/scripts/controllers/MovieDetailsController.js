@@ -30,8 +30,7 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
     };
 
     vm.hasStreamingLinks = function(){
-        if (!vm.movie.title) return false;
-        if (vm.movie.subscription_web_sources.length === 0 && !vm.movie.netflixLink) {
+        if (!vm.movie.title || vm.movie.subscription_web_sources.length === 0 && !vm.movie.netflixLink) {
             return false;
         } else {
             return true;
@@ -39,7 +38,7 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
     };
 
     vm.hasPurchaseLinks = function(){
-        if (!vm.movie.title || vm.movie.subscription_web_sources.length === 0) {
+        if (!vm.movie.title || vm.movie.purchase_web_sources.length === 0) {
             return false;
         } else {
             return true;
@@ -48,8 +47,7 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
     };
 
     vm.hasFreeLinks = function(){
-        if (!vm.movie.title) return false;
-        if (vm.movie.free_web_sources.length === 0) {
+        if (!vm.movie.title || vm.movie.free_web_sources.length === 0) {
             return false;
         } else {
             return true;
@@ -68,7 +66,7 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
         if (!vm.movie.rt_reviews) {
             MovieFactory.getMovieReviews(vm.movie.rottentomatoes_id);
         };
-    }
+    };
 
     vm.getNetflixLink = function() {
         MovieFactory.getNetflixLink(vm.movie);
@@ -79,7 +77,7 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
 
     $('.main-content').on('click', function(){
         if ($('#navbar-collapse-1').hasClass('in')) {
-            $(".navbar-toggle").click();
+            $('.navbar-toggle').click();
         }
     });
 }
