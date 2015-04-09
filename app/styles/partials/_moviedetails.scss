@@ -61,14 +61,20 @@ div#moviedetails {
         @include flexbox();
         flex-wrap: wrap;
         justify-content: space-around;
-        padding: 25px 0;
+        padding-top: 25px;
+
+        button#toggle-reviews {
+          margin-bottom: 25px;
+          margin-left: 25%;
+          margin-right: 25%;
+        }
 
         article.review {
           border-bottom: 1px solid rgba(0, 0, 0, 0.12);
           width: 47%;
           padding: 20px 35px;
 
-          &:nth-child(2n) {
+          &:nth-child(2n + 1) {
             border-left: 1px solid rgba(0, 0, 0, 0.12);
           }
 
