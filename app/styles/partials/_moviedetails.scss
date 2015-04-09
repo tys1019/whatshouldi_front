@@ -16,13 +16,13 @@ div#moviedetails {
 
 
     img.poster-large {
-      @extend .grid_6, .suffix_1;
+      @extend .grid_6, .prefix_1, .push_10;
 
 
     }
 
     div#movieinfo {
-      @extend .grid_10;
+      @extend .grid_10, .pull_6;
       background: rgba(255,255,255, 0.5);
 
 

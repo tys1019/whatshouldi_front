@@ -24,6 +24,7 @@
         </div>
 
 
+
         <div id="movie-buttons">
             <a class="btn btn-xs trailer-button" ng-show="movieDetailsController.movie.trailer" ng-href="{{movieDetailsController.movie.trailer | trustUrl}}">Watch Trailer</a>
             <button ng-show="movieDetailsController.isAuthenticated()" class="btn btn-xs " ng-click="movieDetailsController.updatePlaylist()"><span ng-hide="movieDetailsController.isInPlaylist()">Add to</span><span ng-show="movieDetailsController.isInPlaylist()">Remove from</span> Queue</button>
