@@ -6,6 +6,9 @@ div.modal-content {
       background-color: #222222;
       border-bottom: 1px solid #191919;
       color: #3B6D80;
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 4px 4px 0px 0px;
+      border-radius: 4px 4px 0px 0px;
     }
     div.modal-footer {
       border-top: 1px solid #323232;
