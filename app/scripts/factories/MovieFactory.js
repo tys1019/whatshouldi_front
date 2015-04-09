@@ -24,6 +24,7 @@ angular
                     angular.copy(response.movie, movie);
 
                     _parseJSON();
+                    // debugger
                 }).error(function(data,status,headers,config){
                     console.log('Youre doing it wrong ' + data, status, headers, config);
                 });

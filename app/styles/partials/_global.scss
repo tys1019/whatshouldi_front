@@ -4,3 +4,16 @@ body {
   font-family: 'Roboto', sans-serif;
   @extend .container_notbs;
 }
+
+.btn {
+  color: #3B6D80;
+  background-color: #222222;
+  border-color: #333;
+  width: 23%;
+  margin: 1%;
+  overflow: hidden;
+}
+
+.btn[disabled] {
+  color: rgba(102, 102, 103, 1);
+}

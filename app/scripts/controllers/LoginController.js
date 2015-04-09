@@ -7,6 +7,8 @@ loginController.$inject = ['$location', 'AuthFactory', '$modalInstance', 'Playli
 function loginController($location, AuthFactory, $modalInstance, PlaylistFactory, $route) {
     var vm = this;
     vm.$modalInstance = $modalInstance;
+    vm.hasErrors = false;
+
 
     vm.login = function(credentials){
         AuthFactory.login(credentials).success(function(response){
@@ -14,12 +16,10 @@ function loginController($location, AuthFactory, $modalInstance, PlaylistFactory
             vm.credentials = {};
             PlaylistFactory.getPlaylist(AuthFactory.user.playlist_id);
         }).error(function(){
-            debugger;
             vm.hasErrors = true;
         });
     };
 
-    vm.hasErrors = true;
 
 
 }

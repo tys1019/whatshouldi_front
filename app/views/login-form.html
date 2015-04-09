@@ -1,7 +1,8 @@
 
 <div class="modal-header">
 
-    <h2 ng-class="{red: loginController.hasErrors}">Login </h2>
+    <h2 ng-class="{'has-errors': loginController.hasErrors}">Login <span ng-show="loginController.hasErrors">- incorrect username or password.</span></h2>
+
 </div>
 
     <form class="login-form" name="loginForm" ng-submit="loginController.login(loginController.credentials)" novalidate>
