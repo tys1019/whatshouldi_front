@@ -1,4 +1,31 @@
 div.navbar-fixed-top {
   padding: 0 15px;
   background: rgba(3, 3, 3, 0.89);
+
+  a {
+    color: #3B6D80;
+  }
+}
+
+span.icon-bar {
+  background-color: #3B6D80;
+}
+
+
+//footer stuff
+html {
+  position: relative;
+  min-height: 96%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }

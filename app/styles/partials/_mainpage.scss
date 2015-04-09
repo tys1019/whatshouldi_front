@@ -17,6 +17,10 @@ div.movie-index {
     @include media-query(450px) {
       width: 45%;
     }
+
+    @include media-query(300px) {
+      width: 96%;
+    }
   }
 }
 
