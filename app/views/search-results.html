@@ -1,8 +1,8 @@
 
 <div class="movie-index">
 
-    <h1 ng-hide="{{searchResultsController.results.length === 0}}"> {{searchResultsController.results.length}} Search Results: </h1>
-    <h1 ng-show="{{searchResultsController.results.length === 0}}"> No search results. Try another title.</h1>
+    <h1 ng-if="searchResultsController.results.length !== 0"> {{searchResultsController.results.length}} Search Results: </h1>
+    <h1 ng-if="searchResultsController.results.length === 0"> No search results. Try another title.</h1>
 
 
     <a ng-hide="{{result.poster_240x342 === 'http://static-api.guidebox.com/misc/default_movie_240x342.jpg'}}"ng-href="#/movie/{{result.id}}" ng-repeat="result in searchResultsController.results" id="{{result.id}}">

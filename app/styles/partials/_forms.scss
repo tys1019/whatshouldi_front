@@ -31,13 +31,35 @@ form {
     }
     div#search-params {
       padding: 0 30px;
-
-      input#search-query {
-        width: 100%;
+      @include media-query(400px) {
+        padding: 0px;
+        @include flexbox();
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   }
 }
+
+form#search-form {
+
+  input#search-query {
+    width: 100%;
+    @include media-query(400px) {
+      width: 80%;
+      border-radius: 4px;
+    }
+
+  }
+
+  div.bootstrap-select {
+    @include media-query(400px) {
+      display: block;
+      width: 80%;
+    }
+  }
+}
+
 
 .has-errors {
   color: rgb(158, 46, 46);
