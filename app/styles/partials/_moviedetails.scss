@@ -54,6 +54,7 @@ div#moviedetails {
 
     div#review-container {
       @extend .grid_16;
+      margin-bottom: 50px;
 
       div#movie-reviews {
         background: rgba(255,255,255, 0.5);
