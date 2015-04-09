@@ -57,6 +57,54 @@ form#search-form {
       display: block;
       width: 80%;
     }
+
+    button.selectpicker {
+      background: #222222;
+      border-color: #383838;
+      color: #3B6D80;
+    }
+  }
+
+  div.dropdown-menu.open {
+    background-color: #222222;
+    top: 71%;
+    min-width: 99%;
+    border-color: #383838;
+    @include media-query(400px) {
+      top: 87%;
+    }
+
+    ul.selectpicker {
+      background-color: #222222;
+
+     &.selected {
+          background-color: #222222;
+        }
+
+      li {
+        a {
+          color: #3B6D80;
+
+
+
+          &:hover {
+            background-color: #3B6D80;
+            color: #222222;
+          }
+        }
+
+        &.disabled a{
+          color: #333333;
+            &:hover {
+            background-color: #222222;
+          }
+        }
+
+
+
+      }
+    }
+
   }
 }
 
