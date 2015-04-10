@@ -34,9 +34,23 @@ angular
                 });
             };
 
+            var updateShowPlaylist = function(user, show) {
+                var data = {user: user, show: show};
+                $http.put(ServerUrl + '/playlists/' + user.playlist_id, data).success(function(response){
+                    angular.copy(response, playlist);
+                }).error(function(data,status,headers,config){
+                    console.log('Youre doing it wrong ' + data, status, headers, config);
+                });
+            };
+
             var isInPlaylist = function(movie) {
                 return playlist.movies ? playlist.movies.some(function(e){
                     return e.guidebox_id === movie.guidebox_id;}) : false;
+            };
+
+            var isInTVPlaylist = function(show) {
+                return playlist.shows ? playlist.shows.some(function(e){
+                    return e.guidebox_id === show.guidebox_id;}) : false;
             };
 
 
@@ -51,6 +65,8 @@ angular
                 playlist: playlist,
                 getPlaylist: getPlaylist,
                 updatePlaylist: updatePlaylist,
+                updateShowPlaylist: updateShowPlaylist,
+                isInTVPlaylist: isInTVPlaylist,
                 isInPlaylist: isInPlaylist,
                 getPlaylistByUser: getPlaylistByUser
             };

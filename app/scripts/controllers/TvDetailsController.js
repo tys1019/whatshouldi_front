@@ -9,25 +9,25 @@ function tvDetailsController(TvFactory, $location, $routeParams, $window, Playli
 
     vm.tvShow = TvFactory.tvShow;
 
-    // vm.isAuthenticated = function(){
-    //     return AuthFactory.isAuthenticated();
-    // };
+    vm.isAuthenticated = function(){
+        return AuthFactory.isAuthenticated();
+    };
 
 
-    // vm.updatePlaylist = function(){
-    //     var user = JSON.parse($window.localStorage.getItem('ga-user'));
-    //     PlaylistFactory.updatePlaylist(user, this.movie);
-    // };
+    vm.updatePlaylist = function(){
+        var user = JSON.parse($window.localStorage.getItem('ga-user'));
+        PlaylistFactory.updateShowPlaylist(user, this.tvShow);
+    };
 
 
-    // vm.isInPlaylist = function(){
+    vm.isInPlaylist = function(){
 
-    //     if (AuthFactory.isAuthenticated() && PlaylistFactory.isInPlaylist(vm.movie)) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // };
+        if (AuthFactory.isAuthenticated() && PlaylistFactory.isInTVPlaylist(vm.tvShow)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
     // vm.hasStreamingLinks = function(){
     //     if (!vm.movie.title || vm.movie.subscription_web_sources.length === 0 && !vm.movie.netflixLink) {

@@ -131,3 +131,9 @@
     @content;
   }
 }
+
+@mixin media-query-min($val) {
+  @media (min-width: $val) {
+    @content;
+  }
+}

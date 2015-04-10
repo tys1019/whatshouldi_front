@@ -1,6 +1,11 @@
-div#moviedetails {
+div#tvdetails {
 
-    img.blurred-background {
+  @include media-query-min(700px) {
+    @include flexbox();
+  }
+
+
+  img.blurred-background {
 
         z-index: -1;
         -webkit-filter: blur(30px) opacity(50%);
@@ -17,11 +22,14 @@ div#moviedetails {
 
     img.poster-large {
       @extend .grid_6, .prefix_1, .push_10;
+      @include media-query-min(700px) {
+        height: 100%;
+      }
 
 
     }
 
-    div#movieinfo {
+    div#tvinfo {
       @extend .grid_10, .pull_6;
       background: rgba(255,255,255, 0.5);
 
@@ -34,13 +42,13 @@ div#moviedetails {
         padding-top: 10px;
       }
 
-      div#movie-header {
+      div#tv-header {
         padding: 30px;
         background: #222222;
         color: #e6e6e6;
       }
 
-      div#movie-buttons {
+      div#tv-buttons {
         display: flex;
         justify-content: space-around;
         padding: 10px 0;
@@ -52,11 +60,11 @@ div#moviedetails {
       }
     }
 
-    div#review-container {
+    div#episode-container {
       @extend .grid_16;
       margin-bottom: 50px;
 
-      div#movie-reviews {
+      div#tv-episodes {
         background: rgba(255,255,255, 0.5);
         margin-top: 50px;
         @include flexbox();
@@ -64,13 +72,13 @@ div#moviedetails {
         justify-content: space-around;
         padding-top: 25px;
 
-        button#toggle-reviews {
+        button#toggle-episodes {
           margin-bottom: 25px;
           margin-left: 25%;
           margin-right: 25%;
         }
 
-        article.review {
+        article.episode {
           border-bottom: 1px solid rgba(0, 0, 0, 0.12);
           width: 47%;
           padding: 20px 35px;
