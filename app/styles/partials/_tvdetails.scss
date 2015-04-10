@@ -1,8 +1,6 @@
 div#tvdetails {
 
-  @include media-query-min(700px) {
-    @include flexbox();
-  }
+
 
 
   img.blurred-background {
@@ -22,9 +20,6 @@ div#tvdetails {
 
     img.poster-large {
       @extend .grid_6, .prefix_1, .push_10;
-      @include media-query-min(700px) {
-        height: 100%;
-      }
 
 
     }

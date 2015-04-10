@@ -22,11 +22,12 @@
         </section>
     </div>
 
-    <div id="episode-container" ng-if="tvDetailsController.tvShow.rt_reviews">
+    <div id="episode-container" ng-if="tvDetailsController.tvShow.episodes">
         <div id="tv-episodes" >
-            <button type="toggle" class="btn btn-xs" id="toggle-reviews" ng-click="tvDetailsController.showEpisodes = !tvDetailsController.showEpisodes"><span ng-hide="tvDetailsController.showEpisodes">Show</span><span ng-show="tvDetailsController.showEpisodes">Hide</span> Episodes</button>
-            <article class="episode" ng-repeat="episode in tvDetailsController.tvShow.episode" ng-if="tvDetailsController.showEpisodes ">
-                <h4>{{review.critic}} </h4>
+            <!-- <button type="toggle" class="btn btn-xs" id="toggle-reviews" ng-click="tvDetailsController.showEpisodes = !tvDetailsController.showEpisodes"><span ng-hide="tvDetailsController.showEpisodes">Show</span><span ng-show="tvDetailsController.showEpisodes">Hide</span> Episodes</button> -->
+
+            <article class="episode" ng-repeat="episode in tvDetailsController.tvShow.episodes track by $index">
+                <h4>{{episode.title}} </h4>
                 <p>{{review.quote}} - <a ng-href="{{review.links.review}}">{{review.publication}}</a></p>
             </article>
         </div>
