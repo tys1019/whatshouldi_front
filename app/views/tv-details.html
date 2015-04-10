@@ -26,10 +26,16 @@
         <div id="tv-seasons" >
             <article class="season" ng-repeat="season in tvDetailsController.tvShow.seasons ">
                 <h4>Season {{season.season_number}} </h4>
-                <button class="btn btn-xs" ng-hide="season.episodes" ng-click="tvDetailsController.getEpisodes(season.season_number)">View Episode Links</button>
+
+                <button class="btn btn-xs" >
+                    <a ng-hide="season.episodes" ng-click="tvDetailsController.getEpisodes(season.season_number)" ng-href="javascript:void(0)">View Episode Links</a>
+                    <a ng-show="season.episodes" ng-click="season{{season.season_number}} = !season{{season.season_number}}" ng-href="javascript:void(0)">Toggle</a>
+                </button>
+
                 <section ng-if="season.episodes">
 
-                    <div ng-repeat="episode in season.episodes">Episode {{episode.episode_number}} - {{episode.title}}</div>
+
+                    <div ng-hide="season{{season.season_number}}" ng-repeat="episode in season.episodes">Episode {{episode.episode_number}} - {{episode.title}}</div>
                 </section>
             </article>
         </div>

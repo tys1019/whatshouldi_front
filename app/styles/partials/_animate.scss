@@ -37,3 +37,9 @@
   -moz-animation-duration:1s;
   animation-duration:1s;
 }
+
+button.ng-leave {
+    -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+}
