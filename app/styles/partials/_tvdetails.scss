@@ -78,6 +78,11 @@ div#tvdetails {
         border-bottom: 1px solid rgba(0, 0, 0, 0.12);
         width: 100%;
 
+        div.episode {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+          padding: 15px 0;
+        }
+
         @include media-query(600px) {
           width: 100%;
 

@@ -32,7 +32,7 @@
                 Season {{season.season_number}} Episodes</button>
 
                 <section ng-if="season.episodes" >
-                    <div ng-if="season.displayEpisodes" ng-repeat="episode in season.episodes">Episode {{episode.episode_number}} - {{episode.title}}</div>
+                    <div ng-if="season.displayEpisodes" ng-repeat="episode in season.episodes" class="episode">Episode {{episode.episode_number}} - {{episode.title}}</div>
                 </section>
             </article>
         </div>
