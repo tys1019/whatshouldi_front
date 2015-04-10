@@ -18,12 +18,12 @@
 
 <div class="tv-index">
 
-    <h1 ng-hide="{{playlistController.playlist.shows.length === 0}}"> {{playlistController.playlist.shows.length}} shows in your queue.</h1>
+    <h1 ng-hide="{{playlistController.playlist.shows_simple.length === 0}}"> {{playlistController.playlist.shows_simple.length}} shows in your queue.</h1>
 
-    <h1 ng-show="{{playlistController.playlist.shows.length === 0}}"> Your tv queue is empty!</h1>
+    <h1 ng-show="{{playlistController.playlist.shows_simple.length === 0}}"> Your tv queue is empty!</h1>
 
 
-    <a  ng-href="#/tv/{{show.guidebox_id}}" id="{{show.guidebox_id}}" ng-repeat="show in playlistController.playlist.shows" >
+    <a  ng-href="#/tv/{{show.guidebox_id}}" id="{{show.guidebox_id}}" ng-repeat="show in playlistController.playlist.shows_simple" >
           <img class="main-page-poster" ng-src="{{show.poster_path}}" alt="{{show.title}}">
 
 
