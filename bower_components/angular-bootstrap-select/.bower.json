@@ -32,5 +32,6 @@
   },
   "_source": "git://github.com/joaoneto/angular-bootstrap-select.git",
   "_target": "~0.0.5",
-  "_originalSource": "angular-bootstrap-select"
+  "_originalSource": "angular-bootstrap-select",
+  "_direct": true
 }

@@ -8,9 +8,12 @@ function searchController(SearchFactory, $location, $modalInstance) {
     var vm = this;
 
     vm.results = SearchFactory.results;
+    vm.search_params = {media_type: "Movie"};
 
 
     if ($modalInstance) vm.$modalInstance = $modalInstance;
+
+
 
     vm.search = function(){
         SearchFactory.search(vm.search_params).then(function(response){

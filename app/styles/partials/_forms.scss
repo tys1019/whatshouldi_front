@@ -6,6 +6,9 @@ div.modal-content {
       background-color: #222222;
       border-bottom: 1px solid #191919;
       color: #3B6D80;
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 4px 4px 0px 0px;
+      border-radius: 4px 4px 0px 0px;
     }
     div.modal-footer {
       border-top: 1px solid #323232;
@@ -31,13 +34,84 @@ form {
     }
     div#search-params {
       padding: 0 30px;
-
-      input#search-query {
-        width: 100%;
+      @include media-query(400px) {
+        padding: 0px;
+        @include flexbox();
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
   }
 }
+
+form#search-form {
+
+  input#search-query {
+    width: 100%;
+    @include media-query(400px) {
+      width: 80%;
+      border-radius: 4px;
+    }
+
+  }
+
+  div.bootstrap-select {
+    @include media-query(400px) {
+      display: block;
+      width: 80%;
+    }
+
+    button.selectpicker {
+      background: #222222;
+      border-color: #383838;
+      color: #3B6D80;
+      min-width: 80px;
+    }
+  }
+
+  div.dropdown-menu.open {
+    background-color: #222222;
+    top: 71%;
+    min-width: 99%;
+    border-color: #383838;
+    @include media-query(400px) {
+      top: 87%;
+    }
+
+    ul.selectpicker {
+      background-color: #222222;
+
+     &.selected {
+          background-color: #222222;
+        }
+
+      li {
+        a {
+          color: #3B6D80;
+
+
+
+          &:hover {
+            background-color: #3B6D80;
+            color: #222222;
+          }
+        }
+
+        &.disabled a{
+          color: #333333;
+            &:hover {
+            background-color: #222222;
+          }
+        }
+
+
+
+      }
+    }
+
+  }
+}
+
 
 .has-errors {
   color: rgb(158, 46, 46);
