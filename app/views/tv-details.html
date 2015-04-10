@@ -28,8 +28,9 @@
                 <h4>Season {{season.season_number}} </h4>
 
                 <button class="btn btn-xs" >
-                    <a ng-hide="season.episodes" ng-click="tvDetailsController.getEpisodes(season.season_number)" ng-href="javascript:void(0)">View Episode Links</a>
-                    <a ng-show="season.episodes" ng-click="season{{season.season_number}} = !season{{season.season_number}}" ng-href="javascript:void(0)">Toggle</a>
+                    <a ng-hide="season.episodes" ng-click="tvDetailsController.getEpisodes(season.season_number)" ng-href="javascript:void(0)">View Episodes</a>
+                    <a ng-show="season.episodes && season{{season.season_number}}" ng-click="season{{season.season_number}} = !season{{season.season_number}}" ng-href="javascript:void(0)">View Episodes</a>
+                     <a ng-show="season.episodes && !season{{season.season_number}}" ng-click="season{{season.season_number}} = !season{{season.season_number}}" ng-href="javascript:void(0)">Hide Episodes</a>
                 </button>
 
                 <section ng-if="season.episodes">

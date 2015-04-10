@@ -35,7 +35,7 @@ angular
             };
 
             var updateShowPlaylist = function(user, show) {
-                var data = {user: user, show: show};
+                var data = {user: user, show: {id: show.id}};
                 $http.put(ServerUrl + '/playlists/' + user.playlist_id, data).success(function(response){
                     angular.copy(response, playlist);
                 }).error(function(data,status,headers,config){
@@ -49,7 +49,8 @@ angular
             };
 
             var isInTVPlaylist = function(show) {
-                return playlist.shows ? playlist.shows.some(function(e){
+
+                return playlist.shows_simple ? playlist.shows_simple.some(function(e){
                     return e.guidebox_id === show.guidebox_id;}) : false;
             };
 
