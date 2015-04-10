@@ -1,0 +1,42 @@
+
+<div class="modal-header" id="episode-header">
+    <div class="episode-header-objects">
+        <h2 > {{episodeController.episode.title}} </h2>
+        <h4>Season {{episodeController.episode.season_number}} Episode {{episodeController.episode.episode_number}}</h4>
+        <p>{{episodeController.episode.overview}}</p>
+    </div>
+    <div class="episode-header-objects">
+        <img class="episode-thumbnail" ng-src="{{episodeController.episode.thumbnail_304x171}}" alt="Episode Thumbnail">
+    </div>
+
+</div>
+
+
+<div class="modal-footer" id="episode-details">
+     <div id="web-links">
+        <div class="tv-links" >
+            <h3>Purchase</h3>
+            <div id="purchase-links" ng-if="episodeController.episode.purchase_web_sources.length > 0">
+                <a class="btn btn-xs" ng-repeat="source in episodeController.episode.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+            </div>
+        </div>
+
+
+        <div  class="tv-links" id="streaming-links" >
+            <h3>Streaming</h3>
+            <a class="btn btn-xs" ng-repeat="source in episodeController.episode.subscription_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+            <a class="btn btn-xs" ng-repeat="source in episodeController.episode.tv_everywhere_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+
+            <a class="btn btn-xs" ng-href="{{episodeController.episode.netflixLink}}
+            ">Search Netflix</a>
+        </div>
+
+
+
+        <div class="detail-window" id="free-links" ng-if="episodeController.episode.free_web_sources.length > 0">
+            <h3>Free</h3>
+            <a class="btn btn-xs" ng-repeat="source in episodeController.episode.free_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+        </div>
+    </div>
+</div>
+

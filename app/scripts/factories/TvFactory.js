@@ -5,6 +5,7 @@ angular
     .factory('TvFactory', ['$http', '$window', 'ServerUrl', function($http, $window, ServerUrl){
             // var movies = [];
             var tvShow = {};
+            var episode = {};
 
             // var getMovies = function() {
             //         angular.copy([], movies);
@@ -50,6 +51,10 @@ angular
                 });
             };
 
+            var setEpisode = function(selected) {
+                angular.copy(selected, episode);
+            }
+
             var _parseJSON = function() {
                 if (tvShow.episodes) {tvShow.episodes = JSON.parse(tvShow.episodes);}
                 if (tvShow.seasons) {tvShow.seasons = JSON.parse(tvShow.seasons);}
@@ -57,6 +62,8 @@ angular
 
             return {
                 tvShow: tvShow,
+                episode: episode,
+                setEpisode: setEpisode,
                 getEpisodes: getEpisodes,
                 getTvShowDetails: getTvShowDetails,
                 getSeasons: getSeasons

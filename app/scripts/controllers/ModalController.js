@@ -2,9 +2,9 @@
 
 angular.module('MainController').controller('ModalController', modalController);
 
-modalController.$inject = ['$modal'];
+modalController.$inject = ['$modal', 'TvFactory'];
 
-function modalController($modal) {
+function modalController($modal, TvFactory) {
      var vm = this;
 
 
@@ -27,6 +27,14 @@ function modalController($modal) {
     var modalInstance = $modal.open({
       templateUrl: 'views/search-form.html',
       controller: 'SearchController as searchController'
+    });
+  };
+
+  vm.openEpisode = function(selected) {
+    TvFactory.setEpisode(selected);
+    var modalInstance = $modal.open({
+      templateUrl: 'views/episode-details.html',
+      controller: 'EpisodeController as episodeController'
     });
   };
 };

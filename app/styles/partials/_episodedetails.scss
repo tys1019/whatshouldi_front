@@ -1,0 +1,28 @@
+
+div#episode-header {
+  // @include flexbox();
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+
+
+  div.episode-header-objects {
+    // width: 50%;
+    // @include media-query(500px) {
+    //   width: 100%;
+    // }
+    img.episode-thumbnail {
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+div#episode-details {
+  text-align: left;
+  padding-bottom: 40px;
+
+
+  h3 {
+    color: rgba(59, 109, 128, 0.52);
+  }
+}

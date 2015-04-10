@@ -32,7 +32,9 @@
                 Season {{season.season_number}} Episodes</button>
 
                 <section ng-if="season.episodes" >
-                    <div ng-if="season.displayEpisodes" ng-repeat="episode in season.episodes" class="episode">Episode {{episode.episode_number}} - {{episode.title}}</div>
+                    <div ng-if="season.displayEpisodes" ng-repeat="episode in season.episodes" class="episode">
+                    <a ng-controller="ModalController as modalController" ng-click="modalController.openEpisode(episode)"> Episode {{episode.episode_number}} - {{episode.title}} </a>
+                    </div>
                 </section>
             </article>
         </div>
@@ -42,36 +44,3 @@
 </div>
 
 
-
-<!-- <button type="toggle" class="btn btn-xs" id="toggle-reviews" ng-click="tvDetailsController.showEpisodes = !tvDetailsController.showEpisodes"><span ng-hide="tvDetailsController.showEpisodes">Show</span><span ng-show="tvDetailsController.showEpisodes">Hide</span> Episodes</button> -->
-<!--
-      <a ng-hide="season.episodes" ng-click="tvDetailsController.getEpisodes(season.season_number)" ng-href="javascript:void(0)">Show Season {{season.season_number}}</a>
-                    <a ng-show="season.episodes && season{{season.season_number}}" ng-click="season{{season.season_number}} = !season{{season.season_number}}" ng-href="javascript:void(0)">Show Season {{season.season_number}}</a>
-                     <a ng-show="season.episodes && !season{{season.season_number}}" ng-click="season{{season.season_number}} = !season{{season.season_number}}" ng-href="javascript:void(0)">Hide Season {{season.season_number}}</a> -->
-
-
-<!--
-
- <div id="web-links">
-                <div class="tv-links" ng-if="tvDetailsController.hasPurchaseLinks()">
-                    <h3>Purchase</h3>
-                    <div id="purchase-links">
-                        <a class="btn btn-xs" ng-repeat="source in tvDetailsController.tvShow.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
-                    </div>
-                </div>
-
-
-                <div  class="tv-links" id="streaming-links" ng-if="tvDetailsController.hasStreamingLinks()">
-                    <h3>Streaming</h3>
-                    <a class="btn btn-xs" ng-repeat="source in tvDetailsController.tvShow.subscription_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
-                    <a class="btn btn-xs" ng-if="tvDetailsController.tvShow.netflixLink" ng-href="{{tvDetailsController.tvShow.netflixLink}}
-                    ">Search Netflix</a>
-                </div>
-
-
-
-                <div class="detail-window" id="free-links" ng-if="tvDetailsController.hasFreeLinks()">
-                    <h3>Free</h3>
-                    <a class="btn btn-xs" ng-repeat="source in tvDetailsController.tvShow.free_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
-                </div>
-            </div> -->
