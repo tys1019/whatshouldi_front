@@ -10,11 +10,8 @@ div.movie-index, div.tv-index {
     width: 20%;
     margin: 2%;
 
-    @include media-query(760px) {
-      width: 28%;
-    }
 
-    @include media-query(450px) {
+    @include media-query(570px) {
       width: 45%;
     }
 
@@ -38,4 +35,39 @@ div.movie-index, div.tv-index {
   }
 }
 
+div.main-page-container {
+    margin-bottom: 8%;
+}
 
+h1  {
+  &#main-banner {
+    text-align: center;
+    font-size: 6em;
+    color: rgba(0, 139, 139, 0.74);
+    @include media-query(1000px) {
+      margin-bottom: 9%;
+    }
+    @include media-query(600px) {
+      font-size: 5em;
+    }
+    @include media-query(500px) {
+      font-size: 4em;
+    }
+    @include media-query(420px) {
+      font-size: 3em;
+    }
+    @include media-query(320px) {
+      font-size: 2.7em;
+    }
+  }
+
+  &.section-headline {
+    color: rgba(0, 139, 139, 0.74);
+    padding-left: 6%;
+    margin-bottom: 0;
+
+  }
+  @include media-query(420px) {
+    font-size: 2em;
+  }
+}

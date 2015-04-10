@@ -62,7 +62,6 @@ angular
     };
   })
   .run(function (MovieFactory, AuthFactory, PlaylistFactory, $rootScope, $timeout, $window){
-    MovieFactory.getMovies();
     if (AuthFactory.user.playlist_id) {
       PlaylistFactory.getPlaylist(AuthFactory.user.playlist_id);
     };

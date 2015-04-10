@@ -12,7 +12,7 @@
         </div>
 
         <div id="tv-buttons">
-            <button ng-show="tvDetailsController.isAuthenticated()" class="btn btn-xs " ng-click="tvDetailsController.updatePlaylist()"><span ng-hide="tvDetailsController.isInPlaylist()">Add to</span><span ng-show="tvDetailsController.isInPlaylist()">Remove from</span> Queue</button>
+            <button ng-show="tvDetailsController.isAuthenticated()" class="btn btn-xs queue-toggle" ng-click="tvDetailsController.updatePlaylist()"><span ng-hide="tvDetailsController.isInPlaylist()">Add to</span><span ng-show="tvDetailsController.isInPlaylist()">Remove from</span> Queue</button>
         </div>
 
         <section class="detail-window">

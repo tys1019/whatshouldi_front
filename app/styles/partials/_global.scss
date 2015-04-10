@@ -22,6 +22,10 @@ div.content-container {
     @include media-query(400px) {
       width: 48%;
     }
+
+  &.queue-toggle {
+      min-width: 124px;
+  }
 }
 
 .btn:hover {

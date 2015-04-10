@@ -3,19 +3,19 @@
 angular
     .module('whatshouldiApp')
     .factory('TvFactory', ['$http', '$window', 'ServerUrl', function($http, $window, ServerUrl){
-            // var movies = [];
+            var shows = [];
             var tvShow = {};
             var episode = {};
 
-            // var getMovies = function() {
-            //         angular.copy([], movies);
+            var getShows = function() {
+                    angular.copy([], shows);
 
-            //     $http.get(ServerUrl + '/movies').success(function(response){
-            //         angular.copy(response, movies);
-            //     }).error(function(data,status,headers,config){
-            //         console.log('Youre doing it wrong ' + data, status, headers, config);
-            //     });
-            // };
+                $http.get(ServerUrl + '/shows').success(function(response){
+                    angular.copy(response, shows);
+                }).error(function(data,status,headers,config){
+                    console.log('Youre doing it wrong ' + data, status, headers, config);
+                });
+            };
 
             var getTvShowDetails = function(guideboxId) {
                 angular.copy({}, tvShow);
@@ -62,6 +62,8 @@ angular
 
             return {
                 tvShow: tvShow,
+                shows: shows,
+                getShows: getShows,
                 episode: episode,
                 setEpisode: setEpisode,
                 getEpisodes: getEpisodes,
