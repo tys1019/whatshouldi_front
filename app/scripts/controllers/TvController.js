@@ -10,4 +10,11 @@ function tvController(TvFactory, $location, $routeParams) {
     vm.shows = TvFactory.shows;
 
     TvFactory.getShows();
+
+
+    $('.main-content').on('click', function(){
+        if ($('#navbar-collapse-1').hasClass('in')) {
+            $(".navbar-toggle").click();
+        }
+    });
 }

@@ -75,8 +75,11 @@ div#tvdetails {
       }
 
       article.season {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
         width: 100%;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        }
 
         div.episode {
           border-bottom: 1px solid rgba(0, 0, 0, 0.12);
