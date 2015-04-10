@@ -42,6 +42,11 @@ angular
         controller: 'SearchResultsController',
         controllerAs: 'searchResultsController'
       })
+      .when('/search/tv', {
+        templateUrl: 'views/tv-search-results.html',
+        controller: 'TvSearchResultsController',
+        controllerAs: 'tvSearchResultsController'
+      })
       .otherwise({
         redirectTo: '/'
       });

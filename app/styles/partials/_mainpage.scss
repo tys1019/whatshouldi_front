@@ -1,4 +1,4 @@
-div.movie-index {
+div.movie-index, div.tv-index {
   h1 {
     color: #3B6D80;
     margin: 20px;
@@ -19,6 +19,20 @@ div.movie-index {
     }
 
     @include media-query(300px) {
+      width: 96%;
+    }
+  }
+
+
+  img.tv-poster {
+    width: 28%;
+    margin: 2%;
+
+    @include media-query(760px) {
+      width: 45%;
+    }
+
+    @include media-query(450px) {
       width: 96%;
     }
   }
