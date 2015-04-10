@@ -68,10 +68,10 @@ div#tvdetails {
       padding: 25px;
 
 
-      button#toggle-episodes {
-        margin-bottom: 25px;
-        margin-left: 25%;
-        margin-right: 25%;
+      button.episode-button {
+          min-width: 50%;
+          margin-left: 25%;
+          margin-right: 25%;
       }
 
       article.season {

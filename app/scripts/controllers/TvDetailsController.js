@@ -29,8 +29,14 @@ function tvDetailsController(TvFactory, $location, $routeParams, $window, Playli
         }
     };
 
-    vm.getEpisodes = function(season){
-        TvFactory.getEpisodes(vm.tvShow.guidebox_id, season);
+    vm.getOrToggleEpisodes = function(season){
+        if (!vm.tvShow.seasons[season - 1].episodes) {
+            TvFactory.getEpisodes(vm.tvShow.guidebox_id, season);
+            vm.tvShow.seasons[season - 1].displayEpisodes = true;
+        } else {
+            vm.tvShow.seasons[season - 1].displayEpisodes = !vm.tvShow.seasons[season - 1].displayEpisodes;
+        }
+
     };
 
     vm.getSeasons = function(){
