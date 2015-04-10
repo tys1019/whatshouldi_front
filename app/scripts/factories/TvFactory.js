@@ -27,21 +27,38 @@ angular
                 });
             };
 
-            var getEpisodes = function(guideboxId) {
-                // return $http.post(ServerUrl + '/search', {guidebox_id: guideboxId, search_type: 'episodes'}).success(function(response){
-                //     tvShow.episodes = JSON.parse(response.tvShow.episodes);
-                // }).error(function(data,status,headers,config){
-                //     console.log('Youre doing it wrong ' + data, status, headers, config);
-                // });
+            var getEpisodes = function(guideboxId, season) {
+                var data = {
+                    guidebox_id: guideboxId,
+                    search_type: 'episodes',
+                    season: season
+                }
+                return $http.post(ServerUrl + '/search', data).success(function(response){
+                    var episodes = JSON.parse(response.results);
+                    var season = response.search_params.season - 1;
+                    tvShow.seasons[season].episodes = episodes.reverse();
+                }).error(function(data,status,headers,config){
+                    console.log('Youre doing it wrong ' + data, status, headers, config);
+                });
+            };
+
+            var getSeasons = function(guideboxId) {
+                return $http.post(ServerUrl + '/search', {guidebox_id: guideboxId, search_type: 'seasons'}).success(function(response){
+                    tvShow.seasons = JSON.parse(response.results);
+                }).error(function(data,status,headers,config){
+                    console.log('Youre doing it wrong ' + data, status, headers, config);
+                });
             };
 
             var _parseJSON = function() {
-                if (tvShow.epsiodes) {tvShow.epsiodes = JSON.parse(tvShow.episodes);}
+                if (tvShow.episodes) {tvShow.episodes = JSON.parse(tvShow.episodes);}
+                if (tvShow.seasons) {tvShow.seasons = JSON.parse(tvShow.seasons);}
             };
 
             return {
                 tvShow: tvShow,
                 getEpisodes: getEpisodes,
                 getTvShowDetails: getTvShowDetails,
+                getSeasons: getSeasons
             };
     }]);

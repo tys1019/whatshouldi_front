@@ -29,13 +29,17 @@ function tvDetailsController(TvFactory, $location, $routeParams, $window, Playli
         }
     };
 
-    vm.getEpisodes = function(){
-        if (!vm.tvShow.episodes) {
-            TvFactory.getEpisodes(vm.tvShow.guidebox_id);
+    vm.getEpisodes = function(season){
+        TvFactory.getEpisodes(vm.tvShow.guidebox_id, season);
+    };
+
+    vm.getSeasons = function(){
+        if (!vm.tvShow.seasons) {
+            TvFactory.getSeasons(vm.tvShow.guidebox_id);
         };
     };
 
-    TvFactory.getTvShowDetails($routeParams.guideboxId).then(vm.getEpisodes);
+    TvFactory.getTvShowDetails($routeParams.guideboxId).then(vm.getSeasons);
 
     $('.main-content').on('click', function(){
         if ($('#navbar-collapse-1').hasClass('in')) {
