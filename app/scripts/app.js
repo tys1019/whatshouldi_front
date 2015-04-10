@@ -47,6 +47,11 @@ angular
         controller: 'TvSearchResultsController',
         controllerAs: 'tvSearchResultsController'
       })
+      .when('/tv/:guideboxId', {
+        templateUrl: 'views/tv-details.html',
+        controller: 'TvDetailsController',
+        controllerAs: 'tvDetailsController'
+      })
       .otherwise({
         redirectTo: '/'
       });
