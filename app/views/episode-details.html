@@ -27,8 +27,9 @@
             <a class="btn btn-xs" ng-repeat="source in episodeController.episode.subscription_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
             <a class="btn btn-xs" ng-repeat="source in episodeController.episode.tv_everywhere_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
 
-            <a class="btn btn-xs" ng-href="{{episodeController.netflixLink}}
+            <a class="btn btn-xs" ng-href="{{episodeController.episode.netflixLink}}
             ">Search Netflix</a>
+
         </div>
 
 

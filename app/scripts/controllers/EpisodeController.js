@@ -23,7 +23,7 @@ function episodeController($location, AuthFactory, $modalInstance, TvFactory, $r
 
     vm.episode = TvFactory.episode;
 
-    vm.netflixLink = 'http://dvd.netflix.com/Search?v1=' + TvFactory.tvShow.title + '&ac_abs_posn=-1&fcld=true&ac_rel_posn=-1&ac_category_type=none';
+    TvFactory.getNetflixLink();
 
     vm.parseJSON();
 

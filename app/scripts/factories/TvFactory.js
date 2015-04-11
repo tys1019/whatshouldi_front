@@ -55,6 +55,14 @@ angular
                 angular.copy(selected, episode);
             }
 
+            var getNetflixLink = function() {
+                return $http.get('http://netflixroulette.net/api/api.php?title=' + tvShow.title).success(function(response){
+                    episode.netflixLink = 'http://www.netflix.com/WiMovie/' + response.show_id;
+                }).error(function(data,status,headers,config){
+                    episode.netflixLink = 'http://dvd.netflix.com/Search?v1=' + tvShow.title + '&ac_abs_posn=-1&fcld=true&ac_rel_posn=-1&ac_category_type=none';
+                });
+            };
+
             var _parseJSON = function() {
                 if (tvShow.episodes) {tvShow.episodes = JSON.parse(tvShow.episodes);}
                 if (tvShow.seasons) {tvShow.seasons = JSON.parse(tvShow.seasons);}
@@ -68,6 +76,7 @@ angular
                 setEpisode: setEpisode,
                 getEpisodes: getEpisodes,
                 getTvShowDetails: getTvShowDetails,
-                getSeasons: getSeasons
+                getSeasons: getSeasons,
+                getNetflixLink: getNetflixLink
             };
     }]);
