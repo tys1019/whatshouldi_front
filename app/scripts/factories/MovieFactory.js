@@ -46,6 +46,17 @@ angular
                 });
             };
 
+
+            var getRelatedMovies = function(imdb_id) {
+                return $http.post(ServerUrl + '/search', {imdb_id: imdb_id, search_type: 'related_movies'}).success(function(response){
+                    movie.related = JSON.parse(response.results);
+                    debugger
+                }).error(function(data,status,headers,config){
+                    console.log('Youre doing it wrong ' + data, status, headers, config);
+                });
+            };
+
+
             var getNetflixLink = function(movie) {
                 return $http.get('http://netflixroulette.net/api/api.php?title=' + movie.title).success(function(response){
                     movie.netflixLink = 'http://www.netflix.com/WiMovie/' + response.show_id;
@@ -69,6 +80,7 @@ angular
                 getMovieDetails: getMovieDetails,
                 getMovieRatings: getMovieRatings,
                 getMovieReviews: getMovieReviews,
-                getNetflixLink: getNetflixLink
+                getNetflixLink: getNetflixLink,
+                getRelatedMovies: getRelatedMovies
             };
     }]);

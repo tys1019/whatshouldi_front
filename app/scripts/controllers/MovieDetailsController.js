@@ -62,7 +62,6 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
     };
 
     vm.getMovieReviews = function(){
-
         if (!vm.movie.rt_reviews) {
             MovieFactory.getMovieReviews(vm.movie.rottentomatoes_id);
         };
@@ -72,8 +71,15 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
         MovieFactory.getNetflixLink(vm.movie);
     };
 
+    vm.getRelatedMovies = function(){
+        if (!vm.movie.related) {
+            MovieFactory.getRelatedMovies(vm.movie.imdb_id);
+        };
+    };
 
-    MovieFactory.getMovieDetails($routeParams.guideboxId).then(vm.getMovieRatings).then(vm.getMovieReviews).then(vm.getNetflixLink);
+
+
+    MovieFactory.getMovieDetails($routeParams.guideboxId).then(vm.getMovieRatings).then(vm.getMovieReviews).then(vm.getNetflixLink).then(vm.getRelatedMovies);
 
     $('.main-content').on('click', function(){
         if ($('#navbar-collapse-1').hasClass('in')) {
