@@ -1,7 +1,7 @@
 
 <div class="modal-header" id="episode-header">
     <div class="episode-header-objects">
-        <h2 > {{episodeController.episode.title}} </h2>
+        <h2 > {{episodeController.episode.title}} <span id="close-modal" class="glyphicon glyphicon-remove" ng-click="episodeController.closeModal()"></span> </h2>
         <h4>Season {{episodeController.episode.season_number}} Episode {{episodeController.episode.episode_number}}</h4>
         <p>{{episodeController.episode.overview}}</p>
     </div>

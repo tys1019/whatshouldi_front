@@ -3,6 +3,25 @@ div#episode-header {
   // @include flexbox();
   // flex-wrap: wrap;
   // justify-content: space-between;
+  h2 {
+    margin-top: 0px;
+
+    span#close-modal {
+      float: right;
+      color: #222222;
+      background-color: rgb(191, 191, 191);
+      border: 1px solid;
+      border-radius: 50%;
+      font-size: 67%;
+      padding: 1%;
+
+      &:hover {
+        background-color: rgb(158, 46, 46);
+        cursor: pointer;
+      }
+    }
+  }
+
   h4, p {
       color: rgba(116, 150, 159, 0.5);
   }

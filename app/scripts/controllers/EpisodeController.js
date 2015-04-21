@@ -21,6 +21,10 @@ function episodeController($location, AuthFactory, $modalInstance, TvFactory, $r
         vm.episode.tv_everywhere_web_sources = JSON.parse(vm.episode.tv_everywhere_web_sources);
     };
 
+    vm.closeModal = function() {
+        vm.$modalInstance.close();
+    }
+
     vm.episode = TvFactory.episode;
 
     TvFactory.getNetflixLink();
