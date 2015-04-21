@@ -22,6 +22,16 @@
         </section>
     </div>
 
+    <div id="related-container" ng-if="tvDetailsController.tvShow.related">
+
+        <div id="related" >
+            <h4>Related Shows</h4>
+            <a ng-href="#/tv/{{related.guidebox_id}}" ng-repeat="related in tvDetailsController.tvShow.related" >
+                <img class="related-poster" ng-src="{{related.poster_path}}" alt="{{related.title}}">
+            </a>
+        </div>
+    </div>
+
     <div id="seasons-container" ng-if="tvDetailsController.tvShow.seasons">
         <div id="tv-seasons" >
             <article class="season" ng-repeat="season in tvDetailsController.tvShow.seasons ">

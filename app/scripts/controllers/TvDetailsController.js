@@ -45,7 +45,14 @@ function tvDetailsController(TvFactory, $location, $routeParams, $window, Playli
         };
     };
 
-    TvFactory.getTvShowDetails($routeParams.guideboxId).then(vm.getSeasons);
+    vm.getRelatedShows = function(){
+        if (!vm.tvShow.related) {
+            TvFactory.getRelatedShows(vm.tvShow.imdb_id);
+        };
+    };
+
+
+    TvFactory.getTvShowDetails($routeParams.guideboxId).then(vm.getSeasons).then(vm.getRelatedShows);
 
     $('.main-content').on('click', function(){
         if ($('#navbar-collapse-1').hasClass('in')) {

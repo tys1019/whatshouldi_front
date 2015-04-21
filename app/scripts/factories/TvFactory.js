@@ -63,9 +63,20 @@ angular
                 });
             };
 
+            var getRelatedShows = function(imdbId) {
+                var search_params = {imdb_id: imdbId, search_type: 'related_shows'};
+                return $http.post(ServerUrl + '/search', search_params).success(function(response){
+                    tvShow.related = JSON.parse(response.results);
+                }).error(function(data,status,headers,config){
+                    console.log('Youre doing it wrong ' + data, status, headers, config);
+                });
+            };
+
             var _parseJSON = function() {
                 if (tvShow.episodes) {tvShow.episodes = JSON.parse(tvShow.episodes);}
                 if (tvShow.seasons) {tvShow.seasons = JSON.parse(tvShow.seasons);}
+                if (tvShow.related) {tvShow.related = JSON.parse(tvShow.related);}
+
             };
 
             return {
@@ -77,6 +88,7 @@ angular
                 getEpisodes: getEpisodes,
                 getTvShowDetails: getTvShowDetails,
                 getSeasons: getSeasons,
-                getNetflixLink: getNetflixLink
+                getNetflixLink: getNetflixLink,
+                getRelatedShows: getRelatedShows
             };
     }]);

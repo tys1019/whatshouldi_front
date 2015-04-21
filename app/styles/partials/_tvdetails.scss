@@ -1,8 +1,4 @@
 div#tvdetails {
-
-
-
-
   img.blurred-background {
 
       z-index: -1;
@@ -55,13 +51,33 @@ div#tvdetails {
     }
   }
 
+  div#related-container {
+      @extend .grid_16;
+      margin-top: 50px;
+
+      div#related {
+        background: rgba(255,255,255, 0.5);
+
+        img.related-poster {
+          width: 20%;
+          margin: 5% 2%;
+        }
+
+        h4 {
+          padding: 10px 30px;
+          background: #222222;
+          color: #e6e6e6;
+        }
+
+      }
+    }
+
   div#seasons-container {
     @extend .grid_16;
-    margin-bottom: 50px;
+    margin: 50px 0;
 
     div#tv-seasons {
       background: rgba(255,255,255, 0.5);
-      margin-top: 50px;
       @include flexbox();
       flex-wrap: wrap;
       justify-content: space-around;
