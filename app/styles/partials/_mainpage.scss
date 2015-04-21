@@ -44,7 +44,7 @@ h1  {
   &#main-banner {
     text-align: center;
     font-size: 6em;
-    color: rgba(0, 139, 139, 0.74);
+    color: #3B6D80;
     margin-bottom: 6%;
 
     @include media-query(600px) {
@@ -62,7 +62,7 @@ h1  {
   }
 
   &.section-headline {
-    color: rgba(0, 139, 139, 0.74);
+    color: #3B6D80;
     padding-left: 6%;
     margin-bottom: 0;
 

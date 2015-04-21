@@ -24,6 +24,7 @@ div#moviedetails {
     div#movieinfo {
       @extend .grid_10, .pull_6;
       background: rgba(255,255,255, 0.5);
+      margin-bottom: 50px;
 
 
       h1 {
@@ -58,7 +59,6 @@ div#moviedetails {
 
       div#movie-reviews {
         background: rgba(255,255,255, 0.5);
-        margin-top: 50px;
         @include flexbox();
         flex-wrap: wrap;
         justify-content: space-around;
@@ -84,6 +84,28 @@ div#moviedetails {
 
           }
         }
+      }
+    }
+
+
+    div#related-container {
+      @extend .grid_16;
+      margin-bottom: 50px;
+
+      div#related {
+        background: rgba(255,255,255, 0.5);
+
+        img.related-poster {
+          width: 20%;
+          margin: 5% 2%;
+        }
+
+        h4 {
+          padding: 10px 30px;
+          background: #222222;
+          color: #e6e6e6;
+        }
+
       }
     }
 

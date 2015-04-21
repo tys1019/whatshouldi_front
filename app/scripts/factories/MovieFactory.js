@@ -50,7 +50,6 @@ angular
             var getRelatedMovies = function(imdb_id) {
                 return $http.post(ServerUrl + '/search', {imdb_id: imdb_id, search_type: 'related_movies'}).success(function(response){
                     movie.related = JSON.parse(response.results);
-                    debugger
                 }).error(function(data,status,headers,config){
                     console.log('Youre doing it wrong ' + data, status, headers, config);
                 });
@@ -68,6 +67,7 @@ angular
             var _parseJSON = function() {
                 if (movie.rt_ratings) {movie.rt_ratings = JSON.parse(movie.rt_ratings);}
                 if (movie.rt_reviews) {movie.rt_reviews = JSON.parse(movie.rt_reviews);}
+                if (movie.related) {movie.related = JSON.parse(movie.related);}
                 movie.purchase_web_sources = JSON.parse(movie.purchase_web_sources);
                 movie.subscription_web_sources = JSON.parse(movie.subscription_web_sources);
                 movie.free_web_sources = JSON.parse(movie.free_web_sources);

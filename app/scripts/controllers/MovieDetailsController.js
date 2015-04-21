@@ -79,8 +79,7 @@ function movieDetailsController(MovieFactory, $location, $routeParams, $window, 
 
 
 
-    MovieFactory.getMovieDetails($routeParams.guideboxId).then(vm.getMovieRatings).then(vm.getMovieReviews).then(vm.getNetflixLink);
-// .then(vm.getRelatedMovies)
+    MovieFactory.getMovieDetails($routeParams.guideboxId).then(vm.getMovieRatings).then(vm.getMovieReviews).then(vm.getNetflixLink).then(vm.getRelatedMovies);
     $('.main-content').on('click', function(){
         if ($('#navbar-collapse-1').hasClass('in')) {
             $('.navbar-toggle').click();

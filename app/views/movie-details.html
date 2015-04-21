@@ -61,6 +61,16 @@
         </section>
     </div>
 
+    <div id="related-container" ng-if="movieDetailsController.movie.related">
+
+        <div id="related" >
+            <h4>Related Movies</h4>
+            <a ng-href="#/movie/{{related.guidebox_id}}" ng-repeat="related in movieDetailsController.movie.related" >
+                <img class="related-poster" ng-src="{{related.poster_path}}" alt="{{related.title}}">
+            </a>
+        </div>
+    </div>
+
     <div id="review-container" ng-if="movieDetailsController.movie.rt_reviews">
 
         <div id="movie-reviews" >
@@ -70,7 +80,7 @@
                 <p>{{review.quote}} - <a ng-href="{{review.links.review}}">{{review.publication}}</a></p>
             </article>
         </div>
-        </div>
+    </div>
 
 
 </div>
