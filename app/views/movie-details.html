@@ -26,7 +26,7 @@
 
 
         <div id="movie-buttons">
-            <a class="btn btn-xs trailer-button" ng-show="movieDetailsController.movie.trailer" ng-href="{{movieDetailsController.movie.trailer | trustUrl}}">Watch Trailer</a>
+            <a target="_blank" class="btn btn-xs trailer-button" ng-show="movieDetailsController.movie.trailer" ng-href="{{movieDetailsController.movie.trailer | trustUrl}}">Watch Trailer</a>
             <button ng-show="movieDetailsController.isAuthenticated()" class="btn btn-xs queue-toggle" ng-click="movieDetailsController.updatePlaylist()"><span ng-hide="movieDetailsController.isInPlaylist()">Add to</span><span ng-show="movieDetailsController.isInPlaylist()">Remove from</span> Queue</button>
         </div>
 
@@ -39,15 +39,15 @@
                 <div class="movie-links" ng-if="movieDetailsController.hasPurchaseLinks()">
                     <h3>Purchase</h3>
                     <div id="purchase-links">
-                        <a class="btn btn-xs" ng-repeat="source in movieDetailsController.movie.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+                        <a target="_blank" class="btn btn-xs" ng-repeat="source in movieDetailsController.movie.purchase_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
                     </div>
                 </div>
 
 
                 <div  class="movie-links" id="streaming-links" ng-if="movieDetailsController.hasStreamingLinks()">
                     <h3>Streaming</h3>
-                    <a class="btn btn-xs" ng-repeat="source in movieDetailsController.movie.subscription_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
-                    <a class="btn btn-xs" ng-if="movieDetailsController.movie.netflixLink" ng-href="{{movieDetailsController.movie.netflixLink}}
+                    <a target="_blank" class="btn btn-xs" ng-repeat="source in movieDetailsController.movie.subscription_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+                    <a target="_blank" class="btn btn-xs" ng-if="movieDetailsController.movie.netflixLink" ng-href="{{movieDetailsController.movie.netflixLink}}
                     ">Search Netflix</a>
                 </div>
 
@@ -55,7 +55,7 @@
 
                 <div class="detail-window" id="free-links" ng-if="movieDetailsController.hasFreeLinks()">
                     <h3>Free</h3>
-                    <a class="btn btn-xs" ng-repeat="source in movieDetailsController.movie.free_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
+                    <a target="_blank" class="btn btn-xs" ng-repeat="source in movieDetailsController.movie.free_web_sources" ng-href="{{source.link}}">{{source.display_name}}</a>
                 </div>
             </div>
         </section>
@@ -69,7 +69,7 @@
             <button type="toggle" class="btn btn-xs" id="toggle-reviews" ng-click="movieDetailsController.showReviews = !movieDetailsController.showReviews"><span ng-hide="movieDetailsController.showReviews">Show</span><span ng-show="movieDetailsController.showReviews">Hide</span> Reviews</button>
             <article class="review" ng-repeat="review in movieDetailsController.movie.rt_reviews" ng-if="movieDetailsController.showReviews ">
                 <h4>{{review.critic}} </h4>
-                <p>{{review.quote}} - <a ng-href="{{review.links.review}}">{{review.publication}}</a></p>
+                <p>{{review.quote}} - <a target="_blank" ng-href="{{review.links.review}}">{{review.publication}}</a></p>
             </article>
         </div>
     </div>
