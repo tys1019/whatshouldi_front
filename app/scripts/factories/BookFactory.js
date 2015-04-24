@@ -29,12 +29,12 @@ angular
             };
 
             var _sendToRails = function () {
-                return $http.post(ServerUrl + '/books', {google_id: book.id, title: book.volumeInfo.title, thumbnail: book.volumeInfo.imageLinks.thumbnail});
+                return $http.post(ServerUrl + '/books', {google_id: book.id, title: book.volumeInfo.title, thumbnail: book.volumeInfo.imageLinks.small || book.volumeInfo.imageLinks.thumbnail});
             }
 
             var fixHeights = function(){
-                var first = $('.main-page-book:first');
-                var books = $('.main-page-book:not(:first)');
+                var first = $('.main-page-poster:first');
+                var books = $('.main-page-book');
                 books.each(function(index, element){
                     $(element).height(first.height());
                 })
