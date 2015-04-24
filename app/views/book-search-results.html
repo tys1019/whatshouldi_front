@@ -1,0 +1,14 @@
+
+<div class="book-index">
+
+    <h1 ng-if="bookSearchResultsController.bookResults.length !== 0"> {{bookSearchResultsController.results.length}} Search Results: </h1>
+    <h1 ng-if="bookSearchResultsController.bookResults.length === 0"> No search results. Try another title.</h1>
+
+
+    <a ng-href="#/book/{{result.id}}" ng-repeat="result in bookSearchResultsController.results" id="{{result.id}}">
+        <img class="main-page-poster" ng-src="{{result.volumeInfo.imageLinks.thumbnail}}" alt="{{result.volumeInfo.title}}" ng-if="result.volumeInfo.imageLinks.thumbnail">
+
+    </a>
+
+</div>
+

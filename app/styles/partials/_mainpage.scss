@@ -1,4 +1,4 @@
-div.movie-index, div.tv-index {
+div.movie-index, div.tv-index, div.book-index {
   h1 {
     color: #3B6D80;
     margin: 20px;
@@ -7,6 +7,20 @@ div.movie-index, div.tv-index {
 
 
   img.main-page-poster {
+    width: 20%;
+    margin: 2%;
+
+
+    @include media-query(570px) {
+      width: 45%;
+    }
+
+    @include media-query(300px) {
+      width: 96%;
+    }
+  }
+
+  img.main-page-book {
     width: 20%;
     margin: 2%;
 

@@ -16,9 +16,15 @@ function searchController(SearchFactory, $location, $modalInstance) {
 
 
     vm.search = function(){
-        SearchFactory.search(vm.search_params).then(function(response){
-            vm.$modalInstance.close(response);
-        });
+        if (vm.search_params.media_type === "Books") {
+            SearchFactory.bookSearch(vm.search_params.search_query).then(function(){
+                vm.$modalInstance.close();
+            });
+        } else {
+            SearchFactory.search(vm.search_params).then(function(response){
+                vm.$modalInstance.close(response);
+            });
+        }
     };
 
 

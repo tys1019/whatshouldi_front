@@ -1,0 +1,44 @@
+
+<div id="tvdetails">
+    <img class="poster-large" ng-src="{{bookDetailsController.book.volumeInfo.imageLinks.medium}}" alt="cover" ng-if="bookDetailsController.book.volumeInfo.imageLinks.medium">
+
+    <img class="blurred-background" ng-src="{{bookDetailsController.book.volumeInfo.imageLinks.medium}}" alt="cover" ng-if="bookDetailsController.book.volumeInfo.imageLinks.medium" >
+
+    <img class="poster-large" ng-src="{{bookDetailsController.book.volumeInfo.imageLinks.thumbnail}}" alt="cover" ng-if="!bookDetailsController.book.volumeInfo.imageLinks.medium">
+
+    <img class="blurred-background" ng-src="{{bookDetailsController.book.volumeInfo.imageLinks.thumbnail}}" alt="cover" ng-if="!bookDetailsController.book.volumeInfo.imageLinks.medium">
+
+
+
+    <div id="tvinfo" >
+        <div id="tv-header">
+            <h1>{{bookDetailsController.book.volumeInfo.title}}</h1>
+            <h4>{{bookDetailsController.book.volumeInfo.authors[0]}}</h4>
+            <div id="book-ratings" ng-if="bookDetailsController.book.volumeInfo.averageRating">
+                <h4 class="review-scores">Readers: {{bookDetailsController.book.volumeInfo.averageRating / 5 * 100}}%
+                    <span ng-show="bookDetailsController.book.volumeInfo.averageRating >= 3.5" class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                    <span ng-show="bookDetailsController.book.volumeInfo.averageRating < 3.5" class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                </h4>
+            </div>
+        </div>
+
+        <section class="detail-window">
+            <div id="tv-overview">
+                <p ng-bind-html="bookDetailsController.book.volumeInfo.description"></p>
+            </div>
+        </section>
+    </div>
+
+
+    <div id="seasons-container" >
+        <div id="tv-seasons" >
+                    <a target="_blank" class="btn btn-xs" ng-if="bookDetailsController.book.volumeInfo.infoLink" ng-href="{{bookDetailsController.book.volumeInfo.infoLink}}">More Info</a>
+
+                     <a target="_blank" class="btn btn-xs" ng-if="bookDetailsController.book.accessInfo.webReaderLink" ng-href="{{bookDetailsController.book.accessInfo.webReaderLink}}">Preview</a>
+
+        </div>
+    </div>
+
+</div>
+
+

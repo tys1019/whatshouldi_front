@@ -47,10 +47,20 @@ angular
         controller: 'TvSearchResultsController',
         controllerAs: 'tvSearchResultsController'
       })
+      .when('/search/books', {
+        templateUrl: 'views/book-search-results.html',
+        controller: 'BookSearchResultsController',
+        controllerAs: 'bookSearchResultsController'
+      })
       .when('/tv/:guideboxId', {
         templateUrl: 'views/tv-details.html',
         controller: 'TvDetailsController',
         controllerAs: 'tvDetailsController'
+      })
+      .when('/book/:googleId', {
+        templateUrl: 'views/book-details.html',
+        controller: 'BookDetailsController',
+        controllerAs: 'bookDetailsController'
       })
       .otherwise({
         redirectTo: '/'
