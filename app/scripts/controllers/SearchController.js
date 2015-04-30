@@ -16,8 +16,7 @@ function searchController(SearchFactory, $location, $modalInstance) {
 
 
     vm.search = function(){
-        console.log(vm.search_params.media_type);
-        if (vm.search_params.media_type === "Books") {
+        if (vm.search_params.media_type.trim() === "Books") {
             SearchFactory.bookSearch(vm.search_params.search_query).then(function(){
                 vm.$modalInstance.close();
             });
