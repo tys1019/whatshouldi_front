@@ -85,3 +85,52 @@ h1  {
     font-size: 2em;
   }
 }
+
+h1#type-banner {
+  text-align: center;
+  color: #3B6D80;
+  font-size: 5em;
+
+  @include media-query(750px) {
+    font-size: 4em;
+  }
+
+  @include media-query(420px) {
+    font-size: 3em;
+  }
+  @include media-query(320px) {
+    font-size: 2.7em;
+  }
+  span.type-wrapper {
+    @include media-query(560px) {
+      display: block;
+    }
+    span.typer {
+      font-weight: bold;
+    }
+  }
+
+}
+
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

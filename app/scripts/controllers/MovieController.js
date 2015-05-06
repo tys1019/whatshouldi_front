@@ -17,4 +17,14 @@ function movieController(MovieFactory, $location, $routeParams) {
             $(".navbar-toggle").click();
         }
     });
+
+    $(function(){
+        $(".typer").typed({
+            strings: ["...", "watch?", "binge?", "read?"],
+            typeSpeed: 200,
+            backSpeed: 200,
+            loop: true,
+            backDelay: 1000,
+        });
+    });
 }
